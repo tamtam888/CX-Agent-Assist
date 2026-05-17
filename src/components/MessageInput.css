@@ -1,0 +1,110 @@
+.message-input {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--social-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.message-input__examples {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.message-input__examples-label {
+  font-size: 14px;
+  color: var(--text);
+}
+
+.message-input__example-btn {
+  font-size: 13px;
+  font-family: var(--sans);
+  padding: 5px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--social-bg);
+  color: var(--text-h);
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.message-input__example-btn:hover {
+  border-color: var(--accent-border);
+  box-shadow: var(--shadow);
+}
+
+.message-input__textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 16px;
+  font-size: 15px;
+  font-family: var(--sans);
+  line-height: 1.6;
+  color: var(--text-h);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  resize: vertical;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.message-input__textarea:focus {
+  border-color: var(--accent-border);
+}
+
+.message-input__textarea::placeholder {
+  color: var(--text);
+  opacity: 0.7;
+}
+
+.message-input__actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+.message-input__clear {
+  font-size: 14px;
+  font-family: var(--sans);
+  font-weight: 500;
+  padding: 9px 18px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.message-input__clear:hover {
+  border-color: var(--text);
+  color: var(--text-h);
+}
+
+.message-input__submit {
+  font-size: 15px;
+  font-family: var(--sans);
+  font-weight: 500;
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.message-input__submit:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+.message-input__submit:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
