@@ -4,6 +4,12 @@ A frontend MVP that simulates an AI-assisted customer support workflow.
 
 ---
 
+## Live Demo
+
+https://cx-agent-assist.vercel.app/
+
+---
+
 ## Overview
 
 CX Agent Assist is a browser-based prototype that helps a support agent quickly analyze a customer message. The agent pastes a message, clicks Analyze, and receives structured output across six fields: summary, intent, sentiment, priority, a suggested reply, and a recommended next action.
@@ -83,8 +89,8 @@ src/
 ## How to Run Locally
 
 ```bash
-git clone <repo-url>
-cd cx-agent-assist
+git clone https://github.com/tamtam888/CX-Agent-Assist.git
+cd CX-Agent-Assist
 npm install
 npm run dev
 ```
