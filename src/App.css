@@ -479,3 +479,94 @@ html,body,#root{min-height:100%;width:100%;margin:0}
   .cx-mobile-backdrop{display:none}
   .mobile-menu-open .cx-mobile-backdrop{display:block;position:fixed;inset:0;z-index:30;background:rgba(18,32,55,.28);border:0;border-radius:0}
 }
+
+
+/* Unified responsive finish: mobile usability, text and overflow */
+html,body,#root{width:100%;max-width:100%;overflow-x:hidden}
+.cx-shell,.cx-main,.cx-inbox,.cx-ticket-column,.cx-conversation,.cx-context{min-width:0}
+.cx-ticket-top b{font-size:14px}
+.cx-ticket h3{font-size:14px}
+.cx-ticket p{font-size:13px}
+.cx-tags>span,.cx-tags .cx-priority,.cx-tags small{font-size:11px}
+.cx-message strong{font-size:14px}
+.cx-message p{font-size:15px;line-height:1.65}
+.cx-ai-heading strong{font-size:17px}
+.cx-ai-heading small{font-size:13px}
+.cx-ai-description{font-size:15px}
+.cx-analysis-grid small,.cx-sources b,.cx-reply-label strong{font-size:12px}
+.cx-analysis-grid strong,.cx-analysis-grid p,.cx-sources p,.cx-reply{font-size:14px;line-height:1.55}
+.cx-reply-actions button,.cx-note-actions button{font-size:13px}
+.cx-context-row span,.cx-context-row strong,.cx-playbook p{font-size:13px}
+@media(max-width:590px){
+ .cx-shell{display:block;width:100%;overflow-x:clip}
+ .cx-sidebar,.nav-collapsed .cx-sidebar{position:relative;z-index:40;width:100%;min-height:66px;padding:10px 16px;display:flex;flex-direction:row;align-items:center;flex-wrap:wrap;background:#fff;border-bottom:1px solid #e7eaf2}
+ .cx-sidebar .cx-brand{margin:0;padding:0}
+ .cx-sidebar .cx-nav-toggle{width:46px;height:46px;font-size:24px}
+ .cx-sidebar nav{display:none;width:100%;margin:12px 0 0;padding:8px 0 0;flex-direction:column;gap:6px;border-top:1px solid #e5eaf3}
+ .mobile-menu-open .cx-sidebar nav{display:flex}
+ .mobile-menu-open .cx-sidebar .cx-nav,.mobile-menu-open.nav-collapsed .cx-nav{display:flex;width:100%;justify-content:flex-start;text-align:left;font-size:16px;gap:14px;padding:14px}
+ .mobile-menu-open .cx-sidebar .cx-nav>span{font-size:23px}
+ .mobile-menu-open .cx-sidebar .cx-nav em{display:inline-flex;font-size:12px}
+ .cx-mobile-backdrop{display:none}
+ .mobile-menu-open .cx-mobile-backdrop{display:block;position:fixed;inset:0;z-index:30;background:rgba(18,32,55,.28);border:0}
+ .cx-topbar{height:54px;padding:0 16px;font-size:12px;gap:8px}
+ .cx-top-avatar{display:none}
+ .cx-environment{font-size:11px;white-space:nowrap}
+ .cx-inbox{display:flex;flex-direction:column;height:auto;min-height:0;overflow:visible}
+ .cx-ticket-column{height:auto;min-height:0;max-height:none;display:flex;flex-direction:column;border-right:0;border-bottom:1px solid #e7eaf2}
+ .cx-ticket-heading{padding:20px 17px 12px}
+ .cx-ticket-heading h1{font-size:24px}
+ .cx-search{margin:0 16px 12px}
+ .cx-search input{font-size:15px}
+ .cx-filters{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;padding:0 12px 12px;overflow:visible}
+ .cx-filters button,.cx-filters button:last-child{font-size:11px;line-height:1.25;padding:11px 1px;min-width:0}
+ .cx-ticket-scroll{height:auto;max-height:245px;flex:none;overflow-y:auto;overscroll-behavior:contain}
+ .cx-ticket{padding:14px 16px}
+ .cx-ticket.active{padding-left:13px}
+ .cx-ticket h3{margin:8px 0 5px}
+ .cx-ticket p{font-size:13px}
+ .cx-tags{margin-top:8px}
+ .cx-conversation{min-height:0;overflow:visible}
+ .cx-conversation>.cx-persona-banner{display:grid;grid-template-columns:132px minmax(0,1fr);grid-template-areas:"photo intro" "photo switch";align-items:center;column-gap:14px;row-gap:6px;min-height:0;height:auto;padding:16px;background:#fff}
+ .cx-conversation>.cx-persona-banner .cx-persona-portrait{grid-area:photo;position:relative;inset:auto;order:0;width:132px;height:152px;min-width:132px;max-width:132px;flex:none;border-radius:16px}
+ .cx-conversation>.cx-persona-banner .cx-persona-portrait img{object-fit:cover;object-position:center}
+ .cx-conversation>.cx-persona-banner .cx-persona-intro{grid-area:intro;min-width:0;padding:0;flex:none;text-align:left}
+ .cx-conversation>.cx-persona-banner .cx-persona-kicker{font-size:9px;line-height:1.4;letter-spacing:.7px}
+ .cx-conversation>.cx-persona-banner .cx-persona-intro strong{font-size:21px;line-height:1.2;display:block}
+ .cx-conversation>.cx-persona-banner .cx-persona-intro p{font-size:13px;line-height:1.45;margin:5px 0 0}
+ .cx-conversation>.cx-persona-banner .cx-persona-switch{grid-area:switch;display:flex;justify-content:flex-start;width:max-content;max-width:100%;margin:0;align-self:start}
+ .cx-conversation>.cx-persona-banner .cx-persona-switch button{font-size:12px;padding:9px 12px;flex:none}
+ .cx-conversation-head{padding:18px 16px;gap:10px}
+ .cx-conversation-head h2{font-size:19px;line-height:1.3}
+ .cx-conversation-head select{font-size:12px;min-width:104px;max-width:118px}
+ .cx-conversation-body{padding:17px 14px 25px;flex:none;overflow:visible;background:#fff}
+ .cx-section-label{font-size:11px}
+ .cx-message{gap:8px;margin-bottom:16px}
+ .cx-message>div{padding:14px;max-width:none;flex:1;min-width:0}
+ .cx-message p{font-size:14px}
+ .cx-ai-heading{padding:15px 14px 8px;gap:9px}
+ .cx-ai-heading strong{font-size:16px}
+ .cx-ai-heading small{font-size:12px}
+ .cx-demo-pill{font-size:9px;white-space:nowrap}
+ .cx-ai-description{font-size:14px;line-height:1.55;margin:9px 14px 14px;padding:0}
+ .cx-ai-panel>.cx-primary{font-size:14px;margin:0 14px 15px!important;max-width:calc(100% - 28px)}
+ .cx-analysis{padding:14px}
+ .cx-analysis-grid{gap:8px}
+ .cx-analysis-grid>div{padding:12px}
+ .cx-analysis-grid strong,.cx-analysis-grid p,.cx-sources p,.cx-reply{font-size:14px}
+ .cx-reply-actions{display:flex;flex-wrap:wrap;gap:8px}
+ .cx-reply-actions button{font-size:13px}
+ .cx-notes{margin:14px 0}
+ .cx-notes-heading{gap:10px;flex-wrap:wrap}
+ .cx-notes textarea{font-size:14px}
+ .cx-context{display:block;padding:20px 16px;border-top:1px solid #e5eaf3}
+ .cx-context .cx-customer{padding:10px 0 20px}
+ .cx-page{padding:22px 16px}
+ .cx-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:370px){
+ .cx-conversation>.cx-persona-banner{grid-template-columns:110px minmax(0,1fr);gap:10px;padding:12px}
+ .cx-conversation>.cx-persona-banner .cx-persona-portrait{width:110px;height:135px;min-width:110px;max-width:110px}
+ .cx-conversation>.cx-persona-banner .cx-persona-intro strong{font-size:18px}
+ .cx-filters button,.cx-filters button:last-child{font-size:10px}
+}
