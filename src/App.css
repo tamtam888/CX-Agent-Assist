@@ -209,3 +209,47 @@ html,body,#root{min-height:100%;width:100%;margin:0}
 .cx-filters{display:flex;flex-wrap:wrap;overflow-x:hidden;overflow-y:visible;gap:5px;padding:0 12px 13px}
 .cx-filters button{flex:0 0 auto;border-radius:999px;white-space:nowrap;font-size:11px;padding:8px 9px}
 @media(min-width:591px) and (max-width:850px){.cx-ticket-scroll{overflow:visible}}
+
+
+/* Compact integrated assistant identity — no promotional banner */
+.cx-conversation>.cx-persona-banner,
+.cx-conversation>.cx-persona-banner.gal,
+.cx-conversation>.cx-persona-banner.daniel{
+ position:relative;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;
+ gap:13px;min-height:0;height:auto;padding:13px 22px;
+ background:#fff;border-bottom:1px solid #e9edf3;isolation:auto;overflow:visible
+}
+.cx-conversation>.cx-persona-banner:before{display:none}
+.cx-conversation>.cx-persona-banner .cx-persona-portrait{
+ position:relative;order:0;inset:auto;top:auto;right:auto;bottom:auto;
+ width:64px;height:64px;min-width:64px;max-width:64px;flex:0 0 64px;
+ border:1px solid #e6ebf3;border-radius:50%;box-shadow:none;background:#f3f6fa;
+ overflow:hidden;display:flex;align-items:center;justify-content:center
+}
+.cx-conversation>.cx-persona-banner .cx-persona-portrait img{
+ width:100%;height:100%;object-fit:contain;object-position:center;filter:none
+}
+.cx-conversation>.cx-persona-banner .cx-persona-intro{
+ order:1;flex:1 1 auto;flex-basis:auto;min-width:0;padding:0;text-align:left
+}
+.cx-conversation>.cx-persona-banner .cx-persona-kicker{font-size:9px;letter-spacing:.7px;margin:0 0 4px;color:#72829c}
+.cx-conversation>.cx-persona-banner .cx-persona-intro strong{font-size:18px;line-height:1.25;letter-spacing:-.3px}
+.cx-conversation>.cx-persona-banner .cx-persona-intro p{font-size:12px;font-weight:400;margin:3px 0 0;color:#64748b}
+.cx-conversation>.cx-persona-banner .cx-persona-switch{
+ order:2;align-self:center;margin:0 0 0 auto;padding:3px;box-shadow:none;background:#f5f7fb;border-color:#e7ebf3
+}
+.cx-conversation>.cx-persona-banner .cx-persona-switch button{font-size:11px;padding:8px 11px}
+@media(max-width:850px){
+ .cx-conversation>.cx-persona-banner{padding:12px 15px;gap:9px}
+ .cx-conversation>.cx-persona-banner .cx-persona-portrait{width:52px;height:52px;min-width:52px;max-width:52px;flex-basis:52px}
+ .cx-conversation>.cx-persona-banner .cx-persona-intro strong{font-size:16px}
+ .cx-conversation>.cx-persona-banner .cx-persona-kicker{display:none}
+ .cx-conversation>.cx-persona-banner .cx-persona-switch button{padding:7px 8px}
+}
+@media(max-width:590px){
+ .cx-conversation>.cx-persona-banner{min-height:0;height:auto;padding:12px;flex-wrap:wrap}
+ .cx-conversation>.cx-persona-banner .cx-persona-portrait{width:54px;height:54px;min-width:54px;max-width:54px;flex-basis:54px}
+ .cx-conversation>.cx-persona-banner .cx-persona-intro{padding:0;flex:1}
+ .cx-conversation>.cx-persona-banner .cx-persona-switch{width:auto;max-width:100%;margin:0 0 0 auto}
+ .cx-conversation>.cx-persona-banner .cx-persona-switch button{flex:initial;min-width:0}
+}
