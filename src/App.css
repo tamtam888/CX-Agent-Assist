@@ -195,3 +195,17 @@ html,body,#root{min-height:100%;width:100%;margin:0}
 .cx-conversation>.cx-persona-banner .cx-persona-switch{margin:12px 0 0}
 @media(max-width:850px){.cx-conversation>.cx-persona-banner{min-height:200px;padding:21px 18px}.cx-conversation>.cx-persona-banner .cx-persona-portrait{right:12px;top:14px;bottom:14px;width:33%;min-width:100px}.cx-conversation>.cx-persona-banner .cx-persona-intro{padding-right:38%}}
 @media(max-width:590px){.cx-conversation>.cx-persona-banner{min-height:190px;padding:20px 16px}.cx-conversation>.cx-persona-banner .cx-persona-portrait{right:10px;top:12px;bottom:12px;width:36%;min-width:100px;border-radius:14px}.cx-conversation>.cx-persona-banner .cx-persona-intro{padding-right:40%}.cx-conversation>.cx-persona-banner .cx-persona-intro strong{font-size:20px}}
+
+
+/* QA: avoid nested scroll panes and truncated full-page captures on desktop */
+@media(min-width:591px){
+ .cx-inbox{height:auto;min-height:calc(100vh - 69px);overflow:visible;align-items:stretch}
+ .cx-ticket-column{height:auto;min-height:calc(100vh - 69px);overflow:visible}
+ .cx-ticket-scroll{display:block;flex:initial;overflow:visible}
+ .cx-conversation{min-height:calc(100vh - 69px);overflow:visible}
+ .cx-conversation-body{flex:1;min-height:420px;overflow:visible}
+ .cx-context{height:auto;overflow:visible}
+}
+.cx-filters{display:flex;flex-wrap:wrap;overflow-x:hidden;overflow-y:visible;gap:5px;padding:0 12px 13px}
+.cx-filters button{flex:0 0 auto;border-radius:999px;white-space:nowrap;font-size:11px;padding:8px 9px}
+@media(min-width:591px) and (max-width:850px){.cx-ticket-scroll{overflow:visible}}
