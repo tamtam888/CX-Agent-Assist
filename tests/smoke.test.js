@@ -55,3 +55,15 @@ test('collapsed navigation and visible reset are discoverable', () => {
   assert.match(app, /className="cx-reset-visible"/);
   assert.match(app, /aria-expanded=\{mobileMenuOpen\|\|!navCollapsed\}/);
 });
+
+test('page navigation remains visible independently of the sidebar', () => {
+  assert.match(app, /className="cx-top-nav"/);
+  assert.match(app, /'Overview','Inbox','Knowledge base'\]\.map/);
+  assert.match(app, /onClick=\{\(\)=>\{setPage\(name\);setMobileMenuOpen\(false\)\}\}/);
+  assert.match(polish, /\.cx-top-page\.active/);
+});
+test('expanded sidebar shows text labels explicitly', () => {
+  assert.match(app, /className="cx-nav-text"/);
+  assert.match(app, /width:navCollapsed\?76:226/);
+  assert.match(polish, /\.cx-sidebar \.cx-nav-text\{display:inline!important/);
+});
