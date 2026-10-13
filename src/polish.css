@@ -49,3 +49,71 @@
  .cx-ai-description{font-size:14px}
  .cx-context-row span,.cx-context-row strong{font-size:13px}
 }
+
+/* Consolidated finishing pass: readable type, clear navigation and usable status controls */
+.cx-nav-toggle{display:grid;place-items:center;min-width:36px;min-height:36px}
+.cx-nav:focus-visible,.cx-reset-visible:focus-visible,.cx-filters button:focus-visible{outline:3px solid #6875d9;outline-offset:2px}
+.cx-topbar{min-height:62px}
+.cx-ticket-heading h1{font-size:25px}
+.cx-ticket-heading p,.cx-search input{font-size:14px}
+.cx-ticket-top b{font-size:15px}
+.cx-ticket h3{font-size:15px}
+.cx-ticket p{font-size:14px}
+.cx-ticket-top time{font-size:12px}
+.cx-tags>span,.cx-tags small{font-size:11px}
+.cx-conversation>.cx-persona-banner .cx-persona-intro p{font-size:16px}
+.cx-conversation>.cx-persona-banner .cx-persona-intro strong{font-size:25px}
+.cx-conversation-head h2{font-size:22px}
+.cx-conversation-head p,.cx-conversation-head select{font-size:13px}
+.cx-section-label,.cx-eyebrow{font-size:12px}
+.cx-message>div strong{font-size:15px}
+.cx-message>div p{font-size:16px}
+.cx-ai-heading strong{font-size:18px}
+.cx-ai-heading small{font-size:14px}
+.cx-ai-description{font-size:16px}
+.cx-ai-panel>.cx-primary{font-size:15px}
+.cx-analysis-grid strong,.cx-analysis-grid p,.cx-sources p,.cx-reply{font-size:15px}
+.cx-analysis-grid small,.cx-reply-label span{font-size:12px}
+.cx-reply-label strong,.cx-notes-heading h3{font-size:16px}
+.cx-notes textarea,.cx-saved-note p{font-size:15px}
+.cx-note-actions span,.cx-notes-heading small{font-size:12px}
+.cx-context h3{font-size:12px}
+.cx-context-row span,.cx-context-row strong,.cx-playbook p,.cx-policy-notice{font-size:14px}
+.cx-context .cx-playbook b{font-size:14px}
+.cx-filters{grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;padding:0 6px 12px}
+.cx-filters button,.cx-filters button:last-child{font-size:11px;line-height:1.2;min-height:44px;padding:8px 1px;letter-spacing:-.15px;hyphens:none}
+@media(min-width:1250px){
+ .cx-inbox{grid-template-columns: minmax(315px,330px) minmax(0,1fr) minmax(245px,260px)}
+ .cx-filters button,.cx-filters button:last-child{font-size:11px}
+}
+@media(min-width:1500px){
+ .cx-inbox{grid-template-columns:340px minmax(0,1fr) 270px}
+ .cx-filters button,.cx-filters button:last-child{font-size:12px}
+}
+@media(min-width:591px) and (max-width:1249px){
+ .cx-filters{grid-template-columns:repeat(5,minmax(0,1fr))}
+ .cx-filters button,.cx-filters button:last-child{font-size:10px}
+}
+@media(max-width:850px){
+ .cx-conversation-head h2{font-size:20px}
+ .cx-message>div p{font-size:15px}
+ .cx-ai-description{font-size:15px}
+ .cx-context-row span,.cx-context-row strong,.cx-playbook p{font-size:14px}
+}
+@media(max-width:590px){
+ .cx-conversation>.cx-persona-banner .cx-persona-intro strong{font-size:21px}
+ .cx-conversation>.cx-persona-banner .cx-persona-intro p{font-size:14px}
+ .cx-filters{gap:3px}
+ .cx-filters button,.cx-filters button:last-child{font-size:11px;min-height:44px}
+ .cx-conversation-head h2{font-size:20px}
+ .cx-message>div p{font-size:15px}
+ .cx-ai-description{font-size:15px}
+ .cx-context-row span,.cx-context-row strong,.cx-playbook p{font-size:14px}
+}
+@media(max-width:390px){
+ .cx-topbar{gap:6px}
+ .cx-top-actions{gap:5px}
+ .cx-reset-visible{font-size:10px;padding:7px 6px}
+ .cx-environment{font-size:9px}
+ .cx-filters button,.cx-filters button:last-child{font-size:10px}
+}
