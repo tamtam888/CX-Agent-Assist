@@ -80,3 +80,59 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 .cx-persona-switch button:focus-visible{outline:2px solid #2b9086;outline-offset:2px}
 @media(max-width:850px){.cx-persona-banner{flex-wrap:wrap;padding:18px}.cx-persona-switch{margin-left:auto}}
 @media(max-width:590px){.cx-persona-banner{gap:12px;padding:15px}.cx-persona-portrait{width:58px;height:58px;font-size:33px;border-radius:19px}.cx-persona-intro strong{font-size:17px}.cx-persona-intro p{font-size:11px}.cx-persona-switch{width:100%;justify-content:center;margin-left:0}.cx-persona-switch button{flex:1;padding:9px 8px}}
+
+
+/* Premium light workspace inspired by approved mockups */
+.cx-sidebar{background:#f9fbff;color:#263657;border-right:1px solid #e7ebf6;box-shadow:none}
+.cx-brand{color:#182b55}
+.cx-brand-icon{background:linear-gradient(135deg,#7a80f6,#a3aaff);color:white}
+.cx-brand small{color:#7e8da9}
+.cx-workspace{background:#f1f4fc;border-color:#e5eafa;color:#273b5a}
+.cx-workspace-logo{background:#dfe7ff;color:#4c63b3}
+.cx-workspace small,.cx-agent small{color:#8190a9}
+.cx-menu-label{color:#8d9cb5}
+.cx-nav{color:#60708c}
+.cx-nav.active{background:#e9ecff;color:#304cba}
+.cx-nav em{background:#dce6ff;color:#3b57a7}
+.cx-demo-card{background:#f0f4fc;border-color:#e1e9f8;color:#30466c}
+.cx-demo-card>span{color:#6675df}
+.cx-demo-card p{color:#7385a2}
+.cx-reset{color:#697b9c}
+.cx-agent{border-color:#e1e8f5;color:#304265}
+.cx-agent>span,.cx-top-avatar{background:#e3e9ff;color:#3d59a2}
+.cx-topbar{background:#ffffffea;border-color:#e9edf5}
+.cx-inbox{background:#f6f8fd}
+.cx-ticket-column{border-color:#e9eef6}
+.cx-ticket.active{background:#eaf8f3}
+.cx-filters button.active{background:#e7edff;color:#3152b5}
+.cx-conversation{background:white}
+.cx-conversation-body{background:#f9fbfd}
+.cx-conversation-head select{background:#edf0ff;color:#3854ae;border-color:#e1e7ff}
+.cx-ai-panel{background:#fff;overflow:hidden;border-color:#e9edf5}
+.cx-persona-banner{position:relative;min-height:210px;padding:28px 24px;align-items:flex-start;flex-wrap:wrap;gap:9px;background:linear-gradient(110deg,#eaf1fc 0%,#f5f8fd 55%,#d7e8f1 100%);isolation:isolate}
+.cx-persona-banner.gal{background:linear-gradient(110deg,#eaf1fc 0%,#f6f8fd 55%,#e2ebf3 100%)}
+.cx-persona-banner.daniel{background:linear-gradient(110deg,#eaf1fc 0%,#f6f8fd 55%,#dbe8ee 100%)}
+.cx-persona-banner:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 82% 25%,#d0dff7aa,transparent 42%)}
+.cx-persona-intro{position:relative;z-index:1;flex-basis:100%;padding-right:30%;min-width:0}
+.cx-persona-kicker{color:#637b9d}
+.cx-persona-intro strong{font-size:25px;line-height:1.18;letter-spacing:-.8px;color:#1c2e55}
+.cx-persona-intro p{font-size:14px;color:#415d7a;font-weight:600;margin-top:10px}
+.cx-persona-portrait{position:absolute;right:0;top:0;bottom:0;width:43%;height:100%;border:0;border-radius:0;background:linear-gradient(140deg,#dce9f8,#aebfd8);box-shadow:none;display:grid;place-items:center}
+.cx-persona-portrait:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#eff4fbaa,transparent 42%);pointer-events:none}
+.cx-persona-portrait span{font-size:58px;font-weight:800;color:#fff8;text-shadow:0 4px 16px #49658222}
+.cx-persona-switch{position:relative;z-index:1;align-self:flex-end;margin:24px 0 0;border-color:#e0e9f5;box-shadow:0 3px 15px #344f7210}
+.cx-persona-switch button.selected{background:#4d66ca;box-shadow:0 3px 9px #4d66ca22}
+.cx-ai-heading{background:#fff}
+.cx-ai-icon{background:linear-gradient(135deg,#6378e8,#7b8cf4)}
+.cx-primary{background:#087f75}
+.cx-primary:hover{background:#066b63}
+.cx-demo-pill{color:#596ca4;border-color:#e3e9f6}
+@media(max-width:590px){
+ .cx-persona-banner{min-height:190px;padding:20px 16px}
+ .cx-persona-intro{padding-right:34%}
+ .cx-persona-intro strong{font-size:20px}
+ .cx-persona-intro p{font-size:12px}
+ .cx-persona-portrait{width:40%}
+ .cx-persona-switch{width:auto;max-width:100%;margin:16px 0 0}
+ .cx-persona-switch button{min-width:58px}
+}
