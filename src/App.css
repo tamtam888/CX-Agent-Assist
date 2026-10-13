@@ -466,3 +466,16 @@ html,body,#root{min-height:100%;width:100%;margin:0}
  .cx-conversation>.cx-persona-banner .cx-persona-intro strong{font-size:21px}
  .cx-conversation-head h2{font-size:17px}
 }
+
+/* Mobile navigation: hamburger opens a readable drawer instead of an invisible state. */
+.cx-mobile-backdrop{display:none}
+@media(max-width:590px){
+  .cx-sidebar,.nav-collapsed .cx-sidebar{position:relative;z-index:40;flex-wrap:wrap}
+  .cx-sidebar nav{width:100%;display:none;flex-direction:column;gap:5px;margin:8px 0 4px;padding:8px 0;border-top:1px solid #e5eaf3}
+  .mobile-menu-open .cx-sidebar nav{display:flex}
+  .mobile-menu-open .cx-sidebar .cx-nav,.mobile-menu-open.nav-collapsed .cx-nav{display:flex;width:100%;justify-content:flex-start;gap:14px;padding:14px 16px;text-align:left;font-size:15px;line-height:1.3}
+  .mobile-menu-open .cx-sidebar .cx-nav>span,.mobile-menu-open.nav-collapsed .cx-nav>span{font-size:21px}
+  .mobile-menu-open .cx-sidebar .cx-nav em{display:inline-flex;margin-left:auto;font-size:12px}
+  .cx-mobile-backdrop{display:none}
+  .mobile-menu-open .cx-mobile-backdrop{display:block;position:fixed;inset:0;z-index:30;background:rgba(18,32,55,.28);border:0;border-radius:0}
+}
