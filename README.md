@@ -30,6 +30,7 @@ To check the project:
 ```bash
 npm run lint
 npm run build
+npm test
 ```
 
 ## How the demo works
@@ -49,9 +50,15 @@ The stable deployment is hosted on Vercel: https://cx-agent-assist.vercel.app/
 - Rule-based demo only; no live LLM, order lookup or messaging integrations
 - Local browser storage is not shared between users or devices
 - No authentication, database or production-grade audit log
-- Automated tests and broader mobile/accessibility QA are still needed
+- Automated Node smoke checks cover core UI labels, demo disclosure, assistant assets, mobile CSS and reset state; interactive browser QA and accessibility audits are still needed
 - Potential future additions: verified email sending, real knowledge retrieval, and a secure backend
 
 ## Repository
 
 https://github.com/tamtam888/CX-Agent-Assist
+
+## Quality assurance
+
+A GitHub Actions workflow (`.github/workflows/frontend-qa.yml`) runs `npm ci`, ESLint, Vite build and Node smoke tests on pushes to the feature branch and main, as well as pull requests to main. These checks do **not** replace hands-on browser testing.
+
+Manual acceptance checklist: select each ticket; search and filter by status; analyze a ticket; edit and copy the draft; escalate and resolve; save notes and refresh; switch Gal/Daniel; reset the demo; test 320px, 390px, 768px, 1280px and 1440px viewports; check keyboard focus and scrolling. Verify the feature-branch Vercel Preview before merging.
