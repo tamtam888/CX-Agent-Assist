@@ -64,3 +64,19 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
  .cx-notes{padding:16px;margin:16px 0}
  .cx-page{padding:22px 15px}
 }
+
+
+/* Copilot identity and persona selector */
+.cx-persona-banner{display:flex;align-items:center;gap:16px;padding:22px 24px;background:linear-gradient(112deg,#e9f5f2 0%,#f4f7fb 55%,#f1effb 100%);border-bottom:1px solid #e2eceb}
+.cx-persona-portrait{width:76px;height:76px;flex-shrink:0;display:grid;place-items:center;font-size:43px;background:linear-gradient(145deg,#d4e8e6,#e5e4f4);border:3px solid #fff;border-radius:25px;box-shadow:0 6px 18px #2c566015}
+.cx-persona-intro{flex:1;min-width:0}
+.cx-persona-kicker{display:block;color:#668985;font-size:9px;font-weight:800;letter-spacing:1.4px;margin-bottom:6px}
+.cx-persona-intro strong{display:block;color:#1d3a43;font-size:20px;letter-spacing:-.6px}
+.cx-persona-intro strong span{color:#6b7ed4}
+.cx-persona-intro p{font-size:12px;line-height:1.5;color:#6e838b;margin:6px 0 0}
+.cx-persona-switch{display:flex;gap:5px;padding:5px;background:#ffffffb8;border:1px solid #dce9e8;border-radius:999px;flex-shrink:0}
+.cx-persona-switch button{border:0;background:transparent;border-radius:999px;padding:9px 12px;color:#60767c;font-size:11px;font-weight:700;white-space:nowrap}
+.cx-persona-switch button.selected{background:#1b7773;color:white;box-shadow:0 2px 8px #1b777322}
+.cx-persona-switch button:focus-visible{outline:2px solid #2b9086;outline-offset:2px}
+@media(max-width:850px){.cx-persona-banner{flex-wrap:wrap;padding:18px}.cx-persona-switch{margin-left:auto}}
+@media(max-width:590px){.cx-persona-banner{gap:12px;padding:15px}.cx-persona-portrait{width:58px;height:58px;font-size:33px;border-radius:19px}.cx-persona-intro strong{font-size:17px}.cx-persona-intro p{font-size:11px}.cx-persona-switch{width:100%;justify-content:center;margin-left:0}.cx-persona-switch button{flex:1;padding:9px 8px}}
