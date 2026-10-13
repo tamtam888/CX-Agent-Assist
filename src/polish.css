@@ -184,3 +184,12 @@
  .cx-shell.mobile-menu-open .cx-sidebar nav{display:flex!important}
  .cx-shell.mobile-menu-open .cx-sidebar .cx-nav-text{display:inline!important;font-size:15px!important}
 }
+
+/* Mobile agent switch: full-width dedicated row, never clipped off-screen. */
+@media(max-width:590px){
+ .cx-conversation>.cx-persona-banner{display:grid!important;grid-template-columns:minmax(0,110px) minmax(0,1fr)!important;grid-template-areas:"portrait intro" "switch switch"!important;gap:12px!important;width:100%!important;min-width:0!important;box-sizing:border-box!important;overflow:visible!important;padding:14px!important}
+ .cx-conversation>.cx-persona-banner .cx-persona-portrait{grid-area:portrait!important;width:100%!important;min-width:0!important;max-width:110px!important;height:136px!important}
+ .cx-conversation>.cx-persona-banner .cx-persona-intro{grid-area:intro!important;min-width:0!important;max-width:100%!important;overflow-wrap:anywhere!important}
+ .cx-conversation>.cx-persona-banner .cx-persona-switch{grid-area:switch!important;position:static!important;display:grid!important;grid-template-columns:1fr 1fr!important;width:100%!important;min-width:0!important;max-width:100%!important;justify-self:stretch!important;align-self:stretch!important;margin:0!important;box-sizing:border-box!important}
+ .cx-conversation>.cx-persona-banner .cx-persona-switch button{display:block!important;width:100%!important;min-width:0!important;min-height:46px!important;padding:10px 14px!important;font-size:15px!important;white-space:nowrap!important;touch-action:manipulation}
+}
