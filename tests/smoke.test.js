@@ -33,3 +33,25 @@ test('reset clears demo interaction state', () => {
     assert.ok(app.includes(expression), expression);
   }
 });
+
+const polish = readFileSync(new URL('../src/polish.css', import.meta.url), 'utf8');
+test('final polish stylesheet is imported and readable typography is configured', () => {
+  assert.match(app, /import '\.\/polish\.css'/);
+  assert.match(polish, /\.cx-reset-visible/);
+  assert.match(polish, /\.cx-filters/);
+  assert.match(polish, /\.cx-message>div p\{font-size:16px/);
+});
+test('reset returns persona, navigation and ticket data to defaults', () => {
+  assert.match(app, /setTickets\(initial\);setPersona\('nova'\)/);
+  assert.match(app, /setNavCollapsed\(true\);setToast\('Demo reset'\)/);
+});
+test('filter and search choose matching tickets and clear stale analysis', () => {
+  assert.match(app, /const first=tickets\.find\(t=>f==='All'\|\|t\.status===f\)/);
+  assert.match(app, /if\(first\)setActiveId\(first\.id\)/);
+  assert.match(app, /setAnalyzed\(false\);setDraft\(''\);setNote\(''\)/);
+});
+test('collapsed navigation and visible reset are discoverable', () => {
+  assert.match(app, /title=\{name\} aria-label=\{name\}/);
+  assert.match(app, /className="cx-reset-visible"/);
+  assert.match(app, /aria-expanded=\{mobileMenuOpen\|\|!navCollapsed\}/);
+});
