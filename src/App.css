@@ -432,3 +432,37 @@ html,body,#root{min-height:100%;width:100%;margin:0}
  .cx-conversation-body{padding:15px 12px 24px}
  .cx-ai-panel>.cx-primary{margin:0 0 14px 13px!important;max-width:calc(100% - 26px)}
 }
+
+
+/* Readability pass: comfortable type sizes without changing the approved layout */
+.cx-ticket-heading h1{font-size:23px}
+.cx-ticket-heading p,.cx-ticket p{font-size:13px;line-height:1.55}
+.cx-search input{font-size:13px}
+.cx-filters button,.cx-filters button:last-child{font-size:11px;line-height:1.35}
+.cx-ticket-top strong,.cx-ticket h3{font-size:13px}
+.cx-ticket-top time,.cx-ticket-meta,.cx-ticket small{font-size:11px}
+.cx-conversation>.cx-persona-banner .cx-persona-kicker{font-size:11px}
+.cx-conversation>.cx-persona-banner .cx-persona-intro strong{font-size:25px}
+.cx-conversation>.cx-persona-banner .cx-persona-intro p{font-size:14px}
+.cx-conversation>.cx-persona-banner .cx-persona-switch button{font-size:12px}
+.cx-conversation-head h2{font-size:19px}
+.cx-conversation-head small,.cx-section-label{font-size:11px}
+.cx-message>div strong{font-size:13px}
+.cx-message>div p{font-size:14px;line-height:1.65}
+.cx-ai-heading strong{font-size:16px}
+.cx-ai-heading small{font-size:13px;line-height:1.5}
+.cx-ai-description{font-size:14px;line-height:1.6}
+.cx-ai-panel>.cx-primary{font-size:14px;padding:13px 20px}
+.cx-demo-pill{font-size:10px}
+.cx-notes-heading h3{font-size:15px}
+.cx-notes-heading small,.cx-note-actions span{font-size:12px}
+.cx-notes textarea{font-size:14px;line-height:1.6}
+.cx-note-actions button{font-size:13px}
+.cx-context h3{font-size:12px}
+.cx-context-row span,.cx-context-row strong{font-size:13px}
+.cx-playbook p,.cx-policy-notice{font-size:13px;line-height:1.6}
+@media(max-width:850px){
+ .cx-filters button,.cx-filters button:last-child{font-size:10px}
+ .cx-conversation>.cx-persona-banner .cx-persona-intro strong{font-size:21px}
+ .cx-conversation-head h2{font-size:17px}
+}
