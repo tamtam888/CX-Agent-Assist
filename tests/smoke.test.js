@@ -64,6 +64,13 @@ test('page navigation remains visible independently of the sidebar', () => {
 });
 test('expanded sidebar shows text labels explicitly', () => {
   assert.match(app, /className="cx-nav-text"/);
-  assert.match(app, /width:navCollapsed\?76:226/);
+  assert.match(polish, /flex-basis:236px!important/);
   assert.match(polish, /\.cx-sidebar \.cx-nav-text\{display:inline!important/);
+});
+
+test('collapsed sidebar hides text and expanded sidebar reserves full width', () => {
+  assert.match(polish, /\.cx-shell\.nav-collapsed \.cx-sidebar\{width:76px!important/);
+  assert.match(polish, /\.cx-shell:not\(\.nav-collapsed\) \.cx-sidebar\{width:236px!important/);
+  assert.match(polish, /\.cx-shell\.nav-collapsed \.cx-sidebar \.cx-nav-text\{display:none!important/);
+  assert.doesNotMatch(app, /width:navCollapsed\?76:226/);
 });
