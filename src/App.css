@@ -301,3 +301,42 @@ html,body,#root{min-height:100%;width:100%;margin:0}
 .cx-page{color:var(--cx-ink)}
 .cx-page button:focus-visible,.cx-ticket:focus-visible,.cx-persona-switch button:focus-visible{outline:3px solid #7886e8;outline-offset:2px}
 @media(prefers-reduced-motion:reduce){.cx-sidebar,*{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+
+/* Portrait correction: prominent original photos within a clean white header */
+.cx-conversation>.cx-persona-banner,
+.cx-conversation>.cx-persona-banner.gal,
+.cx-conversation>.cx-persona-banner.daniel{
+ display:flex;align-items:center;flex-wrap:nowrap;gap:18px;
+ min-height:0;height:auto;padding:16px 23px;
+ background:#fff;border-bottom:1px solid #e5eaf3
+}
+.cx-conversation>.cx-persona-banner .cx-persona-portrait{
+ position:relative;inset:auto;top:auto;right:auto;bottom:auto;
+ width:116px;height:116px;min-width:116px;max-width:116px;flex:0 0 116px;
+ border-radius:16px;border:1px solid #e5eaf3;background:#f4f6fa;
+ box-shadow:0 3px 12px #24345c0c;overflow:hidden
+}
+.cx-conversation>.cx-persona-banner .cx-persona-portrait img{
+ width:100%;height:100%;object-fit:contain;object-position:center
+}
+.cx-conversation>.cx-persona-banner .cx-persona-intro{
+ flex:1 1 auto;flex-basis:auto;min-width:0;padding:0
+}
+.cx-conversation>.cx-persona-banner .cx-persona-intro strong{font-size:21px}
+.cx-conversation>.cx-persona-banner .cx-persona-switch{flex-shrink:0;margin-left:auto}
+@media(max-width:850px){
+ .cx-conversation>.cx-persona-banner{padding:14px 16px;gap:12px}
+ .cx-conversation>.cx-persona-banner .cx-persona-portrait{
+  width:94px;height:94px;min-width:94px;max-width:94px;flex-basis:94px
+ }
+ .cx-conversation>.cx-persona-banner .cx-persona-intro strong{font-size:18px}
+}
+@media(max-width:590px){
+ .cx-conversation>.cx-persona-banner{flex-wrap:wrap;padding:13px 14px;gap:10px}
+ .cx-conversation>.cx-persona-banner .cx-persona-portrait{
+  width:92px;height:92px;min-width:92px;max-width:92px;flex-basis:92px
+ }
+ .cx-conversation>.cx-persona-banner .cx-persona-intro{flex:1 1 calc(100% - 110px)}
+ .cx-conversation>.cx-persona-banner .cx-persona-switch{margin:0 0 0 auto}
+}
