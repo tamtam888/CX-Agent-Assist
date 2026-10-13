@@ -138,3 +138,10 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 }
 
 .cx-persona-portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 25%}.cx-persona-portrait:after{background:linear-gradient(90deg,#eff4fb88,transparent 34%)}
+
+/* Top-of-workspace assistant hero */
+.cx-conversation>.cx-persona-banner{flex-shrink:0;min-height:155px;padding:20px 26px;border-bottom:1px solid #e4eaf2}
+.cx-conversation>.cx-persona-banner .cx-persona-intro strong{font-size:23px}
+.cx-conversation>.cx-persona-banner .cx-persona-switch{margin-top:10px}
+.cx-conversation>.cx-persona-banner .cx-persona-portrait{width:34%}
+@media(max-width:590px){.cx-conversation>.cx-persona-banner{min-height:150px;padding:15px 17px}.cx-conversation>.cx-persona-banner .cx-persona-intro strong{font-size:19px}.cx-conversation>.cx-persona-banner .cx-persona-portrait{width:38%}}
