@@ -145,3 +145,42 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 .cx-conversation>.cx-persona-banner .cx-persona-switch{margin-top:10px}
 .cx-conversation>.cx-persona-banner .cx-persona-portrait{width:34%}
 @media(max-width:590px){.cx-conversation>.cx-persona-banner{min-height:150px;padding:15px 17px}.cx-conversation>.cx-persona-banner .cx-persona-intro strong{font-size:19px}.cx-conversation>.cx-persona-banner .cx-persona-portrait{width:38%}}
+
+
+/* QA layout pass: full viewport, balanced conversation, collapsible navigation */
+html,body,#root{min-height:100%;width:100%;margin:0}
+.cx-shell{width:100%;min-height:100vh}
+.cx-main{min-width:0;overflow:hidden}
+.cx-sidebar{width:226px;transition:width .22s ease;padding:18px 12px}
+.cx-nav-toggle{border:1px solid #e2e8f6;background:white;color:#4a60a3;border-radius:12px;width:37px;height:37px;display:grid;place-items:center;font-size:19px;flex-shrink:0}
+.cx-brand{gap:9px;padding:3px 5px 22px}
+.cx-brand-icon{flex-shrink:0}
+.nav-collapsed .cx-sidebar{width:76px;padding:18px 9px}
+.nav-collapsed .cx-brand{padding:2px 5px 23px;justify-content:center}
+.nav-collapsed .cx-brand-icon,.nav-collapsed .cx-brand>div:last-child,.nav-collapsed .cx-workspace,.nav-collapsed .cx-menu-label,.nav-collapsed .cx-sidebar-foot,.nav-collapsed .cx-nav em{display:none}
+.nav-collapsed .cx-nav{justify-content:center;font-size:0;padding:13px}
+.nav-collapsed .cx-nav>span{font-size:23px}
+.cx-inbox{grid-template-columns:minmax(255px,300px) minmax(420px,1fr) minmax(220px,255px);min-height:0;height:calc(100vh - 69px);overflow:hidden}
+.cx-ticket-column,.cx-conversation,.cx-context{min-height:0}
+.cx-ticket-column{overflow:hidden}
+.cx-conversation-body{min-height:0}
+.cx-persona-banner{border-bottom:1px solid #e5ebf6}
+.cx-conversation>.cx-persona-banner{min-height:170px}
+.cx-conversation>.cx-persona-banner .cx-persona-portrait{width:37%;overflow:hidden;background:#e6ecf4}
+.cx-conversation>.cx-persona-banner .cx-persona-portrait img{object-fit:cover;object-position:center 23%;filter:brightness(1.02) contrast(.97)}
+.cx-conversation>.cx-persona-banner .cx-persona-portrait:after{background:none}
+.cx-conversation>.cx-persona-banner .cx-persona-intro{padding-right:37%}
+.cx-conversation>.cx-persona-banner .cx-persona-switch{margin-top:12px}
+.cx-conversation-head{padding:17px 23px}
+.cx-conversation-body{padding:22px}
+.cx-ticket-heading{padding:21px 18px 13px}
+.cx-filters{padding:0 10px 12px}
+.cx-filters button{padding:8px 7px}
+.cx-ai-panel,.cx-notes{border-radius:19px}
+.cx-primary{border-radius:999px}
+.cx-reply-actions button,.cx-notes button{border-radius:999px}
+.cx-ticket-scroll{scrollbar-width:thin}
+.cx-context{padding:22px 16px}
+@media(max-width:1380px){.cx-inbox{grid-template-columns:minmax(245px,285px) minmax(380px,1fr)}.cx-context{display:none}}
+@media(max-width:850px){.cx-sidebar,.nav-collapsed .cx-sidebar{width:66px;padding:13px 7px}.cx-sidebar .cx-brand-icon,.cx-sidebar .cx-brand>div:last-child,.cx-sidebar .cx-workspace,.cx-sidebar .cx-menu-label,.cx-sidebar .cx-sidebar-foot,.cx-sidebar .cx-nav em{display:none}.cx-sidebar .cx-nav{font-size:0;justify-content:center;padding:11px}.cx-sidebar .cx-nav>span{font-size:23px}.cx-inbox{grid-template-columns:minmax(205px,245px) minmax(0,1fr)}}
+@media(max-width:590px){.cx-shell{display:block}.cx-sidebar,.nav-collapsed .cx-sidebar{width:100%;height:auto;display:flex;flex-direction:row;align-items:center;padding:8px 12px}.cx-sidebar .cx-brand{padding:0}.cx-sidebar nav{display:flex;margin-left:auto}.cx-main{overflow:visible}.cx-inbox{display:block;height:auto;overflow:visible}.cx-ticket-column{height:260px}.cx-conversation{min-height:620px}.cx-conversation>.cx-persona-banner{min-height:160px}.cx-conversation>.cx-persona-banner .cx-persona-intro{padding-right:40%}.cx-conversation-body{overflow:visible}.cx-context{display:none}}
