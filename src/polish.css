@@ -117,3 +117,34 @@
  .cx-environment{font-size:9px}
  .cx-filters button,.cx-filters button:last-child{font-size:10px}
 }
+
+/* Navigation acceptance fix: use explicit expanded state on desktop */
+@media(min-width:851px){
+ .cx-shell:not(.nav-collapsed) .cx-sidebar{width:226px;min-width:226px;padding:18px 12px}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-brand{justify-content:flex-start}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-brand-icon,
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-brand>div:last-child,
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-workspace,
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-menu-label,
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-sidebar-foot{display:flex}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-menu-label{display:block}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-nav{justify-content:flex-start;font-size:14px;gap:12px;padding:13px}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-nav>span{font-size:21px}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-nav em{display:inline-flex}
+}
+@media(min-width:591px) and (max-width:850px){
+ .cx-shell:not(.nav-collapsed) .cx-sidebar{width:210px;min-width:210px;padding:14px 10px}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-brand{justify-content:flex-start}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-brand-icon,
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-brand>div:last-child,
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-workspace,
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-sidebar-foot{display:flex}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-menu-label{display:block}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-nav{display:flex;justify-content:flex-start;font-size:13px;gap:9px;padding:12px 8px}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-nav em{display:inline-flex}
+}
+@media(max-width:590px){
+ .mobile-menu-open .cx-sidebar nav{display:flex!important;position:relative;z-index:42}
+ .mobile-menu-open .cx-sidebar .cx-nav{display:flex!important;font-size:16px!important;justify-content:flex-start!important}
+ .mobile-menu-open .cx-sidebar .cx-nav>span{font-size:22px}
+}
