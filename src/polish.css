@@ -254,3 +254,46 @@
  .cx-message>div p{font-size:15px!important}
  .cx-reply-actions button{min-height:44px!important}
 }
+
+/* Visual redesign v3 — desktop-only structural changes, preserving mobile agent switch. */
+@media(min-width:1100px){
+ .cx-shell:not(.nav-collapsed) .cx-sidebar{width:216px!important;min-width:216px!important;max-width:216px!important;flex-basis:216px!important}
+ .cx-inbox{grid-template-columns:minmax(255px,285px) minmax(0,1fr) minmax(232px,250px)!important}
+ .cx-conversation>.cx-persona-banner{min-height:0!important;padding:16px 22px!important;gap:16px!important;align-items:center!important;background:linear-gradient(110deg,#f7f9fe 0%,#fff 75%)!important;border-bottom:1px solid #e7ecf3!important}
+ .cx-conversation>.cx-persona-banner .cx-persona-portrait{width:100px!important;min-width:100px!important;max-width:100px!important;height:110px!important;border-radius:13px!important}
+ .cx-conversation>.cx-persona-banner .cx-persona-intro strong{font-size:21px!important}
+ .cx-conversation>.cx-persona-banner .cx-persona-intro p{font-size:13px!important;margin-top:3px!important}
+ .cx-conversation>.cx-persona-banner .cx-persona-switch{margin-left:auto!important;flex-shrink:0!important}
+ .cx-ticket-heading{padding-top:18px!important;padding-bottom:14px!important}
+ .cx-ticket{padding-top:17px!important;padding-bottom:17px!important}
+ .cx-context{padding-left:17px!important;padding-right:17px!important}
+}
+@media(min-width:591px) and (max-width:1099px){
+ .cx-conversation>.cx-persona-banner .cx-persona-portrait{max-width:125px!important;width:125px!important;min-width:125px!important;height:135px!important}
+}
+.cx-brand-icon{transform:scale(.88);transform-origin:center}
+.cx-brand strong{letter-spacing:-.025em!important}
+.cx-persona-kicker{font-size:10px!important;letter-spacing:.11em!important;color:#64758d!important}
+.cx-analysis-card,.cx-notes{box-shadow:0 8px 26px rgba(26,46,86,.035)!important;border:1px solid #e5ebf3!important;border-radius:16px!important}
+.cx-analysis-section-title{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-bottom:10px;margin-bottom:12px;border-bottom:1px solid #e7ecf3;font-size:13px!important;letter-spacing:0!important}
+.cx-insights-meta{font-size:10px;color:#748398;letter-spacing:.08em;font-weight:700}
+.cx-analysis-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
+.cx-analysis-grid>div{padding:12px 14px!important;background:#fff!important;border:1px solid #e5ebf3!important}
+.cx-analysis-grid>div.cx-full{grid-column:1/-1!important;background:#f6f8fd!important}
+.cx-sources{padding:12px 14px!important;margin-top:10px!important;background:#fff!important}
+.cx-reply-label{margin-top:17px!important}
+.cx-reply{background:#fff!important;min-height:105px!important}
+.cx-primary{background:#0b9189!important;border-radius:10px!important;font-weight:750!important;box-shadow:0 4px 12px rgba(11,145,137,.12)!important}
+.cx-primary:hover{background:#087d76!important}
+.cx-playbook{background:#fff!important;padding:13px!important}
+.cx-policy-notice{background:#f5f7fa!important;border-radius:11px!important}
+.cx-context-row{padding:12px 0!important}
+.cx-context-row strong{font-weight:700!important}
+.cx-reset-visible{background:#f8f9fc!important;border-color:#e6ebf4!important;color:#55647d!important}
+.cx-filters button.active{background:#e9edff!important;color:#3446a4!important}
+.cx-ticket.active{background:#f1f4ff!important}
+@media(max-width:590px){
+ .cx-conversation>.cx-persona-banner .cx-persona-portrait{width:100%!important;max-width:110px!important;min-width:0!important;height:136px!important}
+ .cx-analysis-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .cx-analysis-grid>div.cx-full{grid-column:1/-1!important}
+}
