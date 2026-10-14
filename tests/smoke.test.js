@@ -92,7 +92,7 @@ test('redesigned desktop workspace and compact agent hero have regression guards
   assert.match(polish, /\/\* Visual redesign v3/);
   assert.match(polish, /grid-template-columns:minmax\(255px,285px\) minmax\(0,1fr\) minmax\(232px,250px\)!important/);
   assert.match(polish, /\.cx-conversation>\.cx-persona-banner \.cx-persona-portrait\{width:100px!important/);
-  assert.match(app, /YOUR SUPPORT COPILOT/);
+  assert.match(app, /cx-persona-kicker">ASSISTANT/);
   assert.match(app, /cx-insights-meta/);
 });
 
