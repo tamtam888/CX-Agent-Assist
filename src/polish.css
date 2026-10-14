@@ -203,3 +203,54 @@
  .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-nav-text{display:block!important;flex:1 1 auto!important;min-width:0!important;white-space:nowrap!important;overflow-wrap:normal!important;word-break:normal!important;line-height:1.4!important;text-align:left!important}
  .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-nav em{flex:0 0 auto!important}
 }
+
+/* Product design polish — deliberate hierarchy, restrained surfaces, and accessible type. */
+:root{--cx-polish-ink:#17243c;--cx-polish-muted:#63748a;--cx-polish-line:#e7ecf3;--cx-polish-accent:#4c5fd3}
+.cx-topbar{background:#fff!important;border-bottom:1px solid var(--cx-polish-line)!important;min-height:62px!important}
+.cx-current-page{font-size:15px;font-weight:750;letter-spacing:-.015em;color:var(--cx-polish-ink);white-space:nowrap}
+.cx-top-actions{margin-left:auto}
+.cx-reset-visible{font-size:12px!important;font-weight:650!important;box-shadow:none!important}
+.cx-ticket-heading h1{font-size:23px!important;letter-spacing:-.035em}
+.cx-ticket-heading p{font-size:13px!important;color:var(--cx-polish-muted)!important}
+.cx-ticket h3{font-size:14px!important;line-height:1.4!important;font-weight:700!important}
+.cx-ticket p{font-size:13px!important;line-height:1.55!important;color:var(--cx-polish-muted)!important}
+.cx-ticket.active{box-shadow:inset 3px 0 0 var(--cx-polish-accent)!important}
+.cx-filters{gap:2px!important}
+.cx-filters button{font-weight:650!important;line-height:1.2!important}
+.cx-conversation-head h2{font-size:21px!important;letter-spacing:-.025em!important}
+.cx-conversation-head p,.cx-persona-intro p{color:var(--cx-polish-muted)!important}
+.cx-persona-kicker,.cx-eyebrow,.cx-context h3{letter-spacing:.09em!important;font-weight:750!important}
+.cx-persona-intro strong{letter-spacing:-.035em!important}
+.cx-message>div p{font-size:15px!important;line-height:1.7!important;color:#35445d!important}
+.cx-analysis-section-title{font-size:12px;font-weight:750;color:#43516c;letter-spacing:.01em;margin:0 0 10px}
+.cx-analysis-grid{gap:10px!important}
+.cx-analysis-grid>div{background:#f8fafc!important;border:1px solid var(--cx-polish-line)!important;border-radius:12px!important}
+.cx-analysis-grid small{font-size:11px!important;letter-spacing:.065em!important;color:#687c8d!important}
+.cx-analysis-grid strong,.cx-analysis-grid p{color:var(--cx-polish-ink)!important}
+.cx-sources{background:#f7f9fc!important;border:1px solid var(--cx-polish-line)!important;border-radius:12px!important}
+.cx-reply-label strong{font-size:14px!important}
+.cx-reply{font-size:14px!important;line-height:1.65!important;border-color:#dfe6ef!important;border-radius:12px!important}
+.cx-reply:focus,.cx-search:focus-within{outline:2px solid #b7c4ff!important;outline-offset:1px}
+.cx-reply-actions{gap:8px!important;flex-wrap:wrap!important}
+.cx-reply-actions button{min-height:38px!important;font-size:12px!important;font-weight:700!important}
+.cx-context-row{padding:15px 0!important;border-color:var(--cx-polish-line)!important}
+.cx-context-row span{color:#68788c!important;font-size:13px!important}
+.cx-context-row strong{color:var(--cx-polish-ink)!important;font-size:13px!important}
+.cx-playbook{border-color:var(--cx-polish-line)!important;border-radius:13px!important}
+.cx-playbook b{font-size:13px!important;color:var(--cx-polish-ink)!important}
+.cx-playbook p,.cx-policy-notice{font-size:13px!important;line-height:1.6!important;color:#65768a!important}
+.cx-conversation,.cx-context,.cx-ticket-column{min-width:0}
+@media(min-width:591px){
+ .cx-top-nav{display:none!important}
+ .cx-current-page{display:block!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar{width:248px!important;min-width:248px!important;max-width:248px!important;flex-basis:248px!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-nav-text{white-space:nowrap!important;word-break:normal!important}
+}
+@media(max-width:590px){
+ .cx-current-page{display:none!important}
+ .cx-top-nav{display:flex!important}
+ .cx-top-page{min-height:36px!important}
+ .cx-ticket-heading h1{font-size:22px!important}
+ .cx-message>div p{font-size:15px!important}
+ .cx-reply-actions button{min-height:44px!important}
+}
