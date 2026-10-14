@@ -318,3 +318,35 @@
 @media(min-width:591px) and (max-width:1099px){
  .cx-filters button,.cx-filters button:last-child{font-size:9px!important}
 }
+
+/* Product UI refinement: intentionally restrained, no decorative AI gradients. */
+@media(min-width:1100px){
+ .cx-shell:not(.nav-collapsed) .cx-sidebar{width:252px!important;min-width:252px!important;max-width:252px!important;flex-basis:252px!important}
+ .cx-inbox{grid-template-columns:minmax(330px,345px) minmax(0,1fr) minmax(235px,255px)!important}
+ .cx-conversation>.cx-persona-banner{padding:18px 24px!important;background:#fff!important;min-height:0!important}
+ .cx-conversation>.cx-persona-banner .cx-persona-portrait{width:132px!important;min-width:132px!important;max-width:132px!important;height:142px!important}
+}
+@media(min-width:591px){
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-brand{grid-template-columns:34px 34px minmax(0,1fr)!important;gap:10px!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-brand-icon{width:34px!important;height:34px!important;min-width:34px!important;display:grid!important;place-items:center!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-brand strong{font-size:16px!important;line-height:1.3!important;word-break:normal!important}
+ .cx-filters{display:flex!important;gap:4px!important;align-items:stretch!important;padding:7px 10px 10px!important;overflow-x:auto!important;scrollbar-width:thin!important}
+ .cx-filters button,.cx-filters button:last-child{flex:1 0 auto!important;width:auto!important;min-width:0!important;padding:9px 7px!important;font-size:11px!important;white-space:nowrap!important;line-height:1.25!important;letter-spacing:-.01em!important}
+ .cx-filters button:nth-child(3){white-space:normal!important;max-width:76px!important;min-width:62px!important}
+}
+.cx-brand-icon{background:#182c52!important;background-image:none!important;border-radius:10px!important;color:#fff!important;font-weight:800!important;font-size:12px!important;letter-spacing:-.04em!important;transform:none!important;box-shadow:none!important}
+.cx-brand small{color:#8792a4!important}
+.cx-persona-banner{background:#fff!important}
+.cx-persona-kicker{color:#77849a!important;font-size:10px!important;letter-spacing:.08em!important}
+.cx-persona-intro p{color:#65758a!important}
+.cx-analysis-card,.cx-notes{box-shadow:none!important;border-color:#e3e8f0!important}
+.cx-analysis-grid>div{background:#fff!important;border:1px solid #e4e9f0!important}
+.cx-analysis-grid>div.cx-full{background:#f8f9fc!important}
+.cx-playbook{box-shadow:none!important;border-color:#e4e9f0!important}
+.cx-reset-visible{box-shadow:none!important}
+.cx-context-row{border-color:#edf0f4!important}
+@media(max-width:590px){
+ .cx-brand-icon{font-size:12px!important}
+ .cx-filters{display:flex!important;gap:6px!important;overflow-x:auto!important}
+ .cx-filters button{flex:0 0 auto!important;white-space:nowrap!important}
+}
