@@ -297,3 +297,24 @@
  .cx-analysis-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
  .cx-analysis-grid>div.cx-full{grid-column:1/-1!important}
 }
+
+/* Alignment refinement — coherent brand lockup, readable filters and balanced assistant portrait. */
+@media(min-width:1100px){
+ .cx-shell:not(.nav-collapsed) .cx-sidebar{width:242px!important;min-width:242px!important;max-width:242px!important;flex-basis:242px!important}
+ .cx-inbox{grid-template-columns:minmax(310px,325px) minmax(0,1fr) minmax(235px,250px)!important}
+ .cx-conversation>.cx-persona-banner{padding:17px 20px!important;gap:18px!important}
+ .cx-conversation>.cx-persona-banner .cx-persona-portrait{width:142px!important;min-width:142px!important;max-width:142px!important;height:152px!important}
+ .cx-conversation>.cx-persona-banner .cx-persona-intro strong{font-size:23px!important}
+}
+@media(min-width:591px){
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-brand{display:grid!important;grid-template-columns:34px 36px minmax(0,1fr)!important;gap:9px!important;align-items:center!important;padding-left:13px!important;padding-right:13px!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-brand-icon{width:36px!important;height:36px!important;min-width:36px!important;display:grid!important;place-items:center!important;transform:none!important;line-height:1!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-brand>div:last-child{min-width:0!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-brand strong{font-size:16px!important;line-height:1.18!important;letter-spacing:-.035em!important;overflow-wrap:normal!important;word-break:normal!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-brand small{font-size:8px!important;letter-spacing:.1em!important}
+ .cx-filters{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:3px!important;padding-left:7px!important;padding-right:7px!important}
+ .cx-filters button,.cx-filters button:last-child{min-width:0!important;width:100%!important;padding:10px 2px!important;font-size:10px!important;line-height:1.25!important;white-space:normal!important;overflow-wrap:normal!important;word-break:normal!important}
+}
+@media(min-width:591px) and (max-width:1099px){
+ .cx-filters button,.cx-filters button:last-child{font-size:9px!important}
+}
