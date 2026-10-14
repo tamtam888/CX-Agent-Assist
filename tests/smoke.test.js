@@ -95,3 +95,11 @@ test('redesigned desktop workspace and compact agent hero have regression guards
   assert.match(app, /YOUR SUPPORT COPILOT/);
   assert.match(app, /cx-insights-meta/);
 });
+
+test('restrained product brand and filter layout are retained', () => {
+  assert.match(app, /cx-brand-icon" aria-hidden="true">CX/);
+  assert.match(app, /SUPPORT WORKSPACE/);
+  assert.match(polish, /Product UI refinement: intentionally restrained/);
+  assert.match(polish, /\.cx-filters\{display:flex!important;gap:4px!important/);
+  assert.match(polish, /\.cx-brand-icon\{background:#182c52!important/);
+});
