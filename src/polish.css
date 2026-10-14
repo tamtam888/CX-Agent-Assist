@@ -350,3 +350,32 @@
  .cx-filters{display:flex!important;gap:6px!important;overflow-x:auto!important}
  .cx-filters button{flex:0 0 auto!important;white-space:nowrap!important}
 }
+
+
+/* Knowledge workflows and topic-based dashboard */
+.cx-kb-categories{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 20px}
+.cx-kb-categories button{border:1px solid #dfe6ef;background:#fff;color:#43536b;padding:10px 15px;border-radius:10px;font:inherit;font-weight:600;cursor:pointer}
+.cx-kb-categories button.active{background:#e9edff;border-color:#d8e0ff;color:#304eb7}
+.cx-kb-article{overflow:hidden}
+.cx-kb-open{display:flex;flex-direction:column;align-items:flex-start;gap:12px;text-align:left;width:100%;border:0;background:transparent;padding:22px;cursor:pointer;color:#182c52;font:inherit}
+.cx-kb-open:focus-visible,.cx-kb-categories button:focus-visible,.cx-kb-related:focus-visible,.cx-topic-grid button:focus-visible{outline:3px solid #5c74d8;outline-offset:2px}
+.cx-kb-open strong{font-size:17px}
+.cx-kb-open small{color:#748c87}
+.cx-kb-summary{font-size:14px;line-height:1.65;color:#687b89}
+.cx-kb-symbol{background:#e5f7ee;color:#078d76;border-radius:9px;padding:9px}
+.cx-kb-more{font-size:13px;color:#2557ac;font-weight:700;margin-top:4px}
+.cx-kb-detail{border-top:1px solid #e5eaf1;padding:18px 22px 22px;background:#f9fbfd}
+.cx-kb-detail h3{margin:0 0 10px;font-size:15px}
+.cx-kb-detail p{line-height:1.65}
+.cx-kb-disclaimer{color:#63748a;font-size:13px}
+.cx-kb-related{margin-top:12px;border:1px solid #cbd9e8;border-radius:9px;padding:11px 14px;background:#fff;color:#234b85;font:inherit;font-weight:700;cursor:pointer}
+.cx-kb-empty{color:#66778c;padding:20px}
+.cx-topic-overview{margin:22px 0 26px}
+.cx-topic-overview h2{font-size:19px;margin:0 0 6px}
+.cx-topic-overview>p{color:#6a788c;margin:0 0 14px}
+.cx-topic-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.cx-topic-grid button{display:flex;flex-direction:column;align-items:flex-start;gap:12px;background:#fff;border:1px solid #e1e7ef;border-radius:14px;padding:18px;text-align:left;cursor:pointer;color:#182c52;font:inherit}
+.cx-topic-grid button strong{font-size:28px}
+.cx-topic-grid button small{color:#4d6686}
+@media(max-width:900px){.cx-topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:590px){.cx-kb-open{padding:17px}.cx-topic-grid button{padding:14px}}
