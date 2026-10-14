@@ -1,51 +1,49 @@
-import { useState } from 'react';
-import MessageInput from './components/MessageInput';
-import AnalysisResult from './components/AnalysisResult';
-import { analyzeMessage } from './utils/mockAnalysis';
+import { useEffect, useMemo, useState } from 'react';
 import './App.css';
-
-function App() {
-  const [message, setMessage] = useState('');
-  const [result, setResult] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
-
-  async function handleAnalyze() {
-    if (!message.trim()) return;
-    setIsLoading(true);
-    setResult(null);
-    const analysis = await analyzeMessage(message);
-    setResult(analysis);
-    setIsLoading(false);
-  }
-
-  function handleClear() {
-    setMessage('');
-    setResult(null);
-  }
-
-  return (
-    <div className="app">
-      <header className="app-header">
-        <div className="app-header__inner">
-          <h1 className="app-header__title">CX Agent Assist</h1>
-          <p className="app-header__subtitle">
-            Analyze customer messages and generate structured support insights
-          </p>
-        </div>
-      </header>
-      <main className="app-main">
-        <MessageInput
-          message={message}
-          onChange={setMessage}
-          onAnalyze={handleAnalyze}
-          onClear={handleClear}
-          isLoading={isLoading}
-        />
-        {isLoading && <p className="app-loading">Analyzing message...</p>}
-        {result && <AnalysisResult result={result} />}
-      </main>
-    </div>
-  );
+import './polish.css';
+const initial=[
+{id:'CX-1042',name:'Maya Cohen',initials:'MC',subject:'Order hasn’t arrived',message:'Hi, I placed my order two weeks ago and tracking has not updated in five days. I need an update or a refund.',category:'Delivery',priority:'High',status:'Open',channel:'Email',time:'09:42',notes:[]},
+{id:'CX-1043',name:'Daniel Levi',initials:'DL',subject:'Duplicate subscription charge',message:'I was charged twice for the same subscription this month. Can you reverse the duplicate payment?',category:'Billing',priority:'Urgent',status:'Open',channel:'Chat',time:'09:18',notes:[]},
+{id:'CX-1044',name:'Noa Shapiro',initials:'NS',subject:'Password reset issue',message:'I cannot reset my password. The reset email never arrives, even after checking spam.',category:'Technical',priority:'Medium',status:'In progress',channel:'Email',time:'Yesterday',notes:[]},
+{id:'CX-1045',name:'Alex Morgan',initials:'AM',subject:'Thank you for your help!',message:'My replacement arrived and everything works perfectly. Thank you for your quick help!',category:'Feedback',priority:'Low',status:'Resolved',channel:'Chat',time:'Yesterday',notes:[]},
+{id:'CX-1046',name:'Roni Barak',initials:'RB',subject:'Update delivery address',message:'I entered the wrong address for my order this morning. Is it still possible to update it?',category:'Delivery',priority:'Medium',status:'Open',channel:'Email',time:'Monday',notes:[]}
+];
+const kb=[
+{id:'KB-01',category:'Delivery',title:'Delayed shipment protocol',content:'Verify the order and carrier tracking. If there is no scan for three business days, initiate a carrier investigation. Refunds require eligibility review.'},
+{id:'KB-02',category:'Delivery',title:'Address change policy',content:'Confirm customer identity and fulfillment status. Address changes are only possible before the parcel is handed to the carrier.'},
+{id:'KB-03',category:'Billing',title:'Duplicate charge resolution',content:'Compare transaction records and pending authorizations. Escalate confirmed duplicate charges to billing. Never ask for complete card numbers.'},
+{id:'KB-04',category:'Technical',title:'Password reset troubleshooting',content:'Verify the account email, spam folder and reset-link expiry. Never request a password.'},
+{id:'KB-05',category:'Feedback',title:'Customer appreciation',content:'Thank the customer for their feedback and close the ticket if the issue is confirmed resolved.'}
+];
+const drafts={
+Delivery:'Hi, thanks for reaching out. I’m sorry about the delivery issue. I’ll check your order and the latest carrier update, then confirm the available next steps. Refund or replacement eligibility will be verified before we proceed.',
+Billing:'Hi, I’m sorry about the unexpected charge. I’ll review the transaction records to determine whether this is a duplicate or pending authorization and escalate a confirmed duplicate to our billing team.',
+Technical:'Hi, thanks for letting us know. Let’s verify the email linked to your account and check the reset process. For your security, please don’t share your password.',
+Feedback:'Thank you so much for your feedback! We’re glad we could help. Please reach out if you need anything else.'
+};
+const next={Delivery:'Check order status and carrier tracking',Billing:'Verify transactions and contact billing',Technical:'Verify account and troubleshoot reset',Feedback:'Thank the customer and close the ticket'};
+const read=()=>{try{const x=JSON.parse(localStorage.getItem('cx-copilot-demo'));if(!Array.isArray(x)||x.length!==initial.length)return initial;return initial.map(seed=>{const saved=x.find(t=>t?.id===seed.id);return {...seed,status:['Open','In progress','Escalated','Resolved'].includes(saved?.status)?saved.status:seed.status,notes:Array.isArray(saved?.notes)?saved.notes.filter(n=>typeof n?.text==='string'&&typeof n?.at==='string'):[]};});}catch{return initial;}};
+function App(){
+const [navCollapsed,setNavCollapsed]=useState(true);const [mobileMenuOpen,setMobileMenuOpen]=useState(false);const [persona,setPersona]=useState(()=>{try{return localStorage.getItem('cx-copilot-persona')==='leo'?'leo':'nova'}catch{return 'nova'}}),[tickets,setTickets]=useState(read),[activeId,setActiveId]=useState('CX-1042'),[page,setPage]=useState('Inbox'),[search,setSearch]=useState(''),[filter,setFilter]=useState('All'),[analyzed,setAnalyzed]=useState(false),[draft,setDraft]=useState(''),[note,setNote]=useState(''),[toast,setToast]=useState(''),[kbSearch,setKbSearch]=useState('');
+useEffect(()=>{try{localStorage.setItem('cx-copilot-demo',JSON.stringify(tickets));}catch{/* no storage */}},[tickets]);
+useEffect(()=>{try{localStorage.setItem('cx-copilot-persona',persona)}catch{/* no storage */}},[persona]);
+const matches=useMemo(()=>tickets.filter(t=>(filter==='All'||t.status===filter)&&[t.name,t.subject,t.id,t.category].join(' ').toLowerCase().includes(search.toLowerCase())),[tickets,filter,search]);
+const current=tickets.find(t=>t.id===activeId)||tickets[0];
+const sources=kb.filter(x=>x.category===current.category&&(current.category!=='Delivery'||x.id===(current.id==='CX-1046'?'KB-02':'KB-01')));
+const patch=change=>setTickets(old=>old.map(t=>t.id===current.id?{...t,...change}:t));
+const changeStatus=status=>{patch({status});setToast('Ticket status updated to '+status);};
+const choose=t=>{setActiveId(t.id);setPage('Inbox');setAnalyzed(false);setDraft('');setNote('');setToast('');};
+const analyze=()=>{setToast('');setAnalyzed(true);setDraft(current.id==='CX-1046'?'Hi, thanks for reaching out. I can check whether your delivery address can still be updated. I’ll first verify your order and its fulfillment status. Address changes are only possible before the parcel is handed to the carrier.':drafts[current.category]);};
+const saveNote=()=>{if(!note.trim())return;patch({notes:[...current.notes,{text:note.trim(),at:new Date().toLocaleString()}]});setNote('');setToast('Internal note saved');};
+const copy=async()=>{if(!draft.trim()){setToast('Nothing to copy');return;}try{await navigator.clipboard.writeText(draft);setToast('Reply copied to clipboard');}catch{setToast('Select the reply to copy manually');}};
+const reset=()=>{if(!window.confirm('Reset all fictional demo data?'))return;setTickets(initial);setPersona('nova');setActiveId(initial[0].id);setAnalyzed(false);setDraft('');setNote('');setSearch('');setFilter('All');setKbSearch('');setPage('Inbox');setMobileMenuOpen(false);setNavCollapsed(true);setToast('Demo reset');};
+return <div className={"cx-shell "+(navCollapsed?"nav-collapsed":"")+(mobileMenuOpen?" mobile-menu-open":"")}><aside className="cx-sidebar"><div className="cx-brand"><button type="button" className="cx-nav-toggle" title={navCollapsed?'Expand navigation':'Collapse navigation'} onClick={()=>{if(window.matchMedia('(max-width: 590px)').matches){setMobileMenuOpen(v=>!v)}else{setNavCollapsed(v=>!v)}}} aria-label={navCollapsed?'Expand navigation':'Collapse navigation'} aria-expanded={mobileMenuOpen||!navCollapsed} aria-controls="cx-primary-navigation">☰</button><div className="cx-brand-icon" aria-hidden="true">CX</div><div><strong>CX Agent Assist</strong><small>SUPPORT WORKSPACE</small></div></div><div className="cx-workspace"><span className="cx-workspace-logo">N</span><span>Northstar Commerce<small>Demo workspace</small></span><span className="cx-chevron">⌄</span></div><div className="cx-menu-label">WORKSPACE</div><nav id="cx-primary-navigation" aria-label="Main navigation">{[['Overview','▦'],['Inbox','▤'],['Knowledge base','▧']].map(([name,icon])=><button key={name} className={'cx-nav '+(page===name?'active':'')} title={name} aria-label={name} aria-current={page===name?'page':undefined} onClick={()=>{setPage(name);setMobileMenuOpen(false);if(window.matchMedia('(max-width: 590px)').matches)setNavCollapsed(true)}}><span>{icon}</span><span className="cx-nav-text">{name}</span>{name==='Inbox'&&<em>{tickets.filter(t=>t.status!=='Resolved').length}</em>}</button>)}</nav><div className="cx-sidebar-foot"><div className="cx-demo-card"><span>✦</span><div><b>Interactive demo</b><p>Fictional customer data. Rules-based assistance, not live AI.</p></div></div><button className="cx-reset" title="Reset demo data" onClick={reset}>↻ &nbsp; Reset demo data</button><div className="cx-agent"><span>TA</span><div><strong>Support Agent</strong><small>Demo account</small></div><i/></div></div></aside>{mobileMenuOpen&&<button type="button" className="cx-mobile-backdrop" aria-label="Close navigation menu" onClick={()=>{setMobileMenuOpen(false);setNavCollapsed(true)}} />}
+<main className="cx-main"><header className="cx-topbar"><div className="cx-current-page" aria-live="polite">{page}</div><div className="cx-top-nav" aria-label="Page navigation">{['Overview','Inbox','Knowledge base'].map(name=><button type="button" key={name} className={"cx-top-page "+(page===name?"active":"")} aria-current={page===name?"page":undefined} onClick={()=>{setPage(name);setMobileMenuOpen(false)}}>{name}</button>)}</div><div className="cx-top-actions"><button type="button" className="cx-reset-visible" onClick={reset} title="Restore the five fictional tickets and clear demo changes">↻ Reset demo data</button><div className="cx-environment"><i/> Demo environment <span className="cx-top-avatar">TA</span></div></div></header>
+{page==='Inbox'&&<div className="cx-inbox"><section className="cx-ticket-column"><div className="cx-ticket-heading"><h1>Inbox <span>{tickets.length}</span></h1><p>Manage customer conversations</p></div><label className="cx-search"><span>⌕</span><input aria-label="Search conversations" placeholder="Search conversations..." value={search} onChange={e=>{const value=e.target.value;setSearch(value);setAnalyzed(false);setDraft('');setNote('');setToast('');const first=tickets.find(t=>(filter==='All'||t.status===filter)&&[t.name,t.subject,t.id,t.category].join(' ').toLowerCase().includes(value.toLowerCase()));if(first)setActiveId(first.id)}}/></label><div className="cx-filters">{['All','Open','In progress','Escalated','Resolved'].map(f=><button key={f} className={filter===f?'active':''} aria-pressed={filter===f} onClick={()=>{setFilter(f);setAnalyzed(false);setDraft('');setNote('');setToast('');const first=tickets.find(t=>f==='All'||t.status===f);if(first)setActiveId(first.id)}}>{f}</button>)}</div><div className="cx-ticket-scroll">{matches.map(t=><button key={t.id} className={'cx-ticket '+(current.id===t.id?'active':'')} aria-pressed={current.id===t.id} onClick={()=>choose(t)}><div className="cx-ticket-top"><span className="cx-avatar">{t.initials}</span><b>{t.name}</b><time>{t.time}</time></div><h3>{t.subject}</h3><p>{t.message}</p><div className="cx-tags"><span className={'cx-priority '+t.priority.toLowerCase()}>{t.priority}</span><span>{t.category}</span><small>{t.id}</small></div></button>)}{!matches.length&&<p className="cx-empty">No matching tickets.</p>}</div></section>
+<section className="cx-conversation"><div className={"cx-persona-banner "+(persona==='nova'?"gal":"daniel")}><div className={"cx-persona-portrait "+(persona==='nova'?"is-gal":"is-daniel")} aria-hidden="true"><img src={persona==='nova'?"/Gal.jpeg":"/Daniel.jpeg"} alt="" /></div><div className="cx-persona-intro"><span className="cx-persona-kicker">ASSISTANT</span><strong>{persona==='nova'?"Hi, I'm Gal":"Hi, I'm Daniel"} <span aria-hidden="true">👋</span></strong><p>Conversation support</p></div><div className="cx-persona-switch" role="group" aria-label="Choose support assistant"><button type="button" aria-pressed={persona==='nova'} className={persona==='nova'?'selected':''} onClick={()=>setPersona('nova')}>Gal</button><button type="button" aria-pressed={persona==='leo'} className={persona==='leo'?'selected':''} onClick={()=>setPersona('leo')}>Daniel</button></div></div><div className="cx-conversation-head"><div><span className="cx-eyebrow">CONVERSATION / {current.id}</span><h2>{current.subject}</h2><p><span className="cx-avatar tiny">{current.initials}</span>{current.name} <span>·</span> {current.channel}</p></div><select aria-label="Ticket status" value={current.status} onChange={e=>changeStatus(e.target.value)}>{['Open','In progress','Escalated','Resolved'].map(s=><option key={s}>{s}</option>)}</select></div><div className="cx-conversation-body"><div className="cx-section-label">CUSTOMER MESSAGE <span>{current.time}</span></div><div className="cx-message"><span className="cx-avatar">{current.initials}</span><div><strong>{current.name}</strong><p>{current.message}</p></div></div><div className="cx-ai-panel"><div className="cx-ai-heading"><span className="cx-ai-icon">✳</span><div><strong>Agent Assist analysis</strong><small>Understand, prioritize and respond</small></div><span className="cx-demo-pill">RULES-BASED DEMO</span></div><p className="cx-ai-description">Analyze this conversation to get an action plan and an editable reply informed by the demo knowledge base.</p><button className="cx-primary" onClick={analyze}>✳ &nbsp; {analyzed?'Analyze again':'Analyze conversation'} <span>→</span></button>{analyzed&&<div className="cx-analysis"><div className="cx-analysis-section-title"><span>Conversation insights</span><span className="cx-insights-meta">DEMO ANALYSIS</span></div><div className="cx-analysis-grid"><div><small>ISSUE TYPE</small><strong>{current.category}</strong></div><div><small>PRIORITY</small><strong>{current.priority}</strong></div><div className="cx-full"><small>RECOMMENDED NEXT STEP</small><p>{current.id==='CX-1046'?'Verify order identity and fulfillment status before changing the address':next[current.category]}</p></div></div><div className="cx-sources"><b>▧ &nbsp; Knowledge sources</b>{sources.map(s=><p key={s.id}>{s.id} · {s.title}</p>)}</div><div className="cx-reply-label"><strong>Suggested reply</strong><span>Editable draft · Not sent</span></div><textarea className="cx-reply" aria-label="Suggested reply" value={draft} onChange={e=>setDraft(e.target.value)}/><div className="cx-reply-actions"><button onClick={copy} disabled={!draft.trim()}>▢ Copy reply</button><button onClick={()=>changeStatus('Escalated')}>Escalate</button><button onClick={()=>changeStatus('Resolved')}>✓ Mark resolved</button></div></div>}</div><div className="cx-notes"><div className="cx-notes-heading"><h3>Internal notes <span>{current.notes.length}</span></h3><small>Private · Visible to support agents only</small></div>{current.notes.map((n,i)=><div className="cx-saved-note" key={i}><small>Support Agent · {n.at}</small><p>{n.text}</p></div>)}<textarea aria-label="Internal note" placeholder="Add a private note about this conversation..." value={note} onChange={e=>setNote(e.target.value)}/><div className="cx-note-actions"><span>Notes are not sent to the customer</span><button onClick={saveNote} disabled={!note.trim()}>Save note</button></div></div></div></section>
+<aside className="cx-context"><h3>CUSTOMER DETAILS</h3><div className="cx-customer"><span className="cx-avatar large">{current.initials}</span><b>{current.name}</b><small>Fictional customer</small></div>{[['Ticket ID',current.id],['Category',current.category],['Priority',current.priority],['Status',current.status]].map(([k,v])=><div className="cx-context-row" key={k}><span>{k}</span><strong>{v}</strong></div>)}<h3 className="cx-playbook-heading">RECOMMENDED PLAYBOOK</h3>{sources.map(s=><article className="cx-playbook" key={s.id}><span>▧</span><div><b>{s.title}</b><p>{s.content}</p></div></article>)}<div className="cx-policy-notice">Verify actual policies and customer records before taking action.</div></aside></div>}
+{page==='Overview'&&<div className="cx-page"><span className="cx-eyebrow">SUPPORT OPERATIONS</span><h1>Good morning, Agent <span>✦</span></h1><p className="cx-page-subtitle">Here's what's happening in your support workspace.</p><div className="cx-metrics">{[['Open tickets',tickets.filter(t=>t.status==='Open').length],['In progress',tickets.filter(t=>t.status==='In progress').length],['Urgent tickets',tickets.filter(t=>t.priority==='Urgent'&&t.status!=='Resolved').length],['Resolved',tickets.filter(t=>t.status==='Resolved').length]].map(([label,value])=><div key={label}><span>{label}</span><strong>{value}</strong><small>Demo workspace</small></div>)}</div><div className="cx-overview-card"><h2>Priority queue</h2><p>Tickets needing your attention</p>{tickets.filter(t=>t.status!=='Resolved').sort((a,b)=>({Urgent:0,High:1,Medium:2,Low:3}[a.priority]-{Urgent:0,High:1,Medium:2,Low:3}[b.priority])).map(t=><button key={t.id} onClick={()=>choose(t)}><span className="cx-avatar">{t.initials}</span><span><b>{t.subject}</b><small>{t.name} · {t.id}</small></span><span className={'cx-priority '+t.priority.toLowerCase()}>{t.priority}</span><span>→</span></button>)}</div></div>}
+{page==='Knowledge base'&&<div className="cx-page"><span className="cx-eyebrow">KNOWLEDGE CENTER</span><h1>Knowledge base</h1><p className="cx-page-subtitle">Sample company policies used by the Agent Assist demo.</p><input className="cx-kb-search" aria-label="Search knowledge articles" placeholder="Search knowledge articles..." value={kbSearch} onChange={e=>setKbSearch(e.target.value)}/><div className="cx-articles">{kb.filter(a=>(a.title+a.content+a.category).toLowerCase().includes(kbSearch.toLowerCase())).map(a=><article key={a.id}><span>▧</span><small>{a.id} · {a.category}</small><h2>{a.title}</h2><p>{a.content}</p></article>)}</div></div>}
+</main>{toast&&<div className="cx-toast" role="status">{toast}<button onClick={()=>setToast('')} aria-label="Dismiss">×</button></div>}</div>;
 }
-
 export default App;

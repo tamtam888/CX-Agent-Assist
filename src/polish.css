@@ -1,0 +1,352 @@
+/* Final readability and filter pass. Kept separate from the existing design to avoid regressions. */
+.cx-top-actions{display:flex;align-items:center;gap:16px;min-width:0}
+.cx-reset-visible{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:#f4f6ff;border:1px solid #dce3f5;border-radius:9px;padding:9px 13px;color:#3447a0;font-size:13px;font-weight:700;white-space:nowrap}
+.cx-reset-visible:hover{background:#e9edff}
+.cx-ticket-column{min-width:0}
+.cx-ticket-heading p{font-size:14px;line-height:1.5}
+.cx-search input{font-size:14px}
+.cx-ticket-top b{font-size:14px}
+.cx-ticket h3{font-size:14px;line-height:1.45}
+.cx-ticket p{font-size:13px;line-height:1.6}
+.cx-ticket-top time,.cx-tags small{font-size:11px}
+.cx-filters{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;overflow:visible;padding-left:7px;padding-right:7px}
+.cx-filters button,.cx-filters button:last-child{min-width:0;width:100%;white-space:normal;overflow-wrap:normal;word-break:normal;font-size:11px;line-height:1.3;padding:10px 2px;font-weight:700}
+.cx-conversation-head h2{font-size:21px;line-height:1.35}
+.cx-message>div p{font-size:15px;line-height:1.65}
+.cx-ai-description{font-size:15px;line-height:1.6}
+.cx-ai-heading strong{font-size:17px}
+.cx-analysis-grid strong,.cx-analysis-grid p,.cx-sources p,.cx-reply{font-size:15px;line-height:1.6}
+.cx-reply-label strong,.cx-notes-heading h3{font-size:15px}
+.cx-reply-actions button,.cx-note-actions button{font-size:13px}
+.cx-context-row span,.cx-context-row strong,.cx-playbook p,.cx-policy-notice{font-size:13px;line-height:1.6}
+.cx-context .cx-playbook b{font-size:13px}
+@media(min-width:1250px){
+ .cx-inbox{grid-template-columns:minmax(280px,300px) minmax(0,1fr) minmax(220px,245px)}
+ .cx-filters button,.cx-filters button:last-child{font-size:11px}
+}
+@media(min-width:1500px){
+ .cx-inbox{grid-template-columns:315px minmax(0,1fr) 260px}
+ .cx-filters button,.cx-filters button:last-child{font-size:12px}
+ .cx-ticket p{font-size:14px}
+}
+@media(max-width:1249px){
+ .cx-filters button,.cx-filters button:last-child{font-size:10px}
+}
+@media(max-width:850px){
+ .cx-top-actions{gap:8px}
+ .cx-reset-visible{font-size:12px;padding:8px 10px}
+ .cx-filters button,.cx-filters button:last-child{font-size:11px}
+}
+@media(max-width:590px){
+ .cx-topbar{padding-left:12px;padding-right:12px}
+ .cx-top-actions{gap:5px}
+ .cx-reset-visible{font-size:11px;padding:7px 8px}
+ .cx-environment{font-size:10px}
+ .cx-filters button,.cx-filters button:last-child{font-size:11px}
+ .cx-ticket h3{font-size:14px}
+ .cx-ticket p{font-size:13px}
+ .cx-message>div p{font-size:15px}
+ .cx-ai-description{font-size:14px}
+ .cx-context-row span,.cx-context-row strong{font-size:13px}
+}
+
+/* Consolidated finishing pass: readable type, clear navigation and usable status controls */
+.cx-nav-toggle{display:grid;place-items:center;min-width:36px;min-height:36px}
+.cx-nav:focus-visible,.cx-reset-visible:focus-visible,.cx-filters button:focus-visible{outline:3px solid #6875d9;outline-offset:2px}
+.cx-topbar{min-height:62px}
+.cx-ticket-heading h1{font-size:25px}
+.cx-ticket-heading p,.cx-search input{font-size:14px}
+.cx-ticket-top b{font-size:15px}
+.cx-ticket h3{font-size:15px}
+.cx-ticket p{font-size:14px}
+.cx-ticket-top time{font-size:12px}
+.cx-tags>span,.cx-tags small{font-size:11px}
+.cx-conversation>.cx-persona-banner .cx-persona-intro p{font-size:16px}
+.cx-conversation>.cx-persona-banner .cx-persona-intro strong{font-size:25px}
+.cx-conversation-head h2{font-size:22px}
+.cx-conversation-head p,.cx-conversation-head select{font-size:13px}
+.cx-section-label,.cx-eyebrow{font-size:12px}
+.cx-message>div strong{font-size:15px}
+.cx-message>div p{font-size:16px}
+.cx-ai-heading strong{font-size:18px}
+.cx-ai-heading small{font-size:14px}
+.cx-ai-description{font-size:16px}
+.cx-ai-panel>.cx-primary{font-size:15px}
+.cx-analysis-grid strong,.cx-analysis-grid p,.cx-sources p,.cx-reply{font-size:15px}
+.cx-analysis-grid small,.cx-reply-label span{font-size:12px}
+.cx-reply-label strong,.cx-notes-heading h3{font-size:16px}
+.cx-notes textarea,.cx-saved-note p{font-size:15px}
+.cx-note-actions span,.cx-notes-heading small{font-size:12px}
+.cx-context h3{font-size:12px}
+.cx-context-row span,.cx-context-row strong,.cx-playbook p,.cx-policy-notice{font-size:14px}
+.cx-context .cx-playbook b{font-size:14px}
+.cx-filters{grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;padding:0 6px 12px}
+.cx-filters button,.cx-filters button:last-child{font-size:11px;line-height:1.2;min-height:44px;padding:8px 1px;letter-spacing:-.15px;hyphens:none}
+@media(min-width:1250px){
+ .cx-inbox{grid-template-columns: minmax(315px,330px) minmax(0,1fr) minmax(245px,260px)}
+ .cx-filters button,.cx-filters button:last-child{font-size:11px}
+}
+@media(min-width:1500px){
+ .cx-inbox{grid-template-columns:340px minmax(0,1fr) 270px}
+ .cx-filters button,.cx-filters button:last-child{font-size:12px}
+}
+@media(min-width:591px) and (max-width:1249px){
+ .cx-filters{grid-template-columns:repeat(5,minmax(0,1fr))}
+ .cx-filters button,.cx-filters button:last-child{font-size:10px}
+}
+@media(max-width:850px){
+ .cx-conversation-head h2{font-size:20px}
+ .cx-message>div p{font-size:15px}
+ .cx-ai-description{font-size:15px}
+ .cx-context-row span,.cx-context-row strong,.cx-playbook p{font-size:14px}
+}
+@media(max-width:590px){
+ .cx-conversation>.cx-persona-banner .cx-persona-intro strong{font-size:21px}
+ .cx-conversation>.cx-persona-banner .cx-persona-intro p{font-size:14px}
+ .cx-filters{gap:3px}
+ .cx-filters button,.cx-filters button:last-child{font-size:11px;min-height:44px}
+ .cx-conversation-head h2{font-size:20px}
+ .cx-message>div p{font-size:15px}
+ .cx-ai-description{font-size:15px}
+ .cx-context-row span,.cx-context-row strong,.cx-playbook p{font-size:14px}
+}
+@media(max-width:390px){
+ .cx-topbar{gap:6px}
+ .cx-top-actions{gap:5px}
+ .cx-reset-visible{font-size:10px;padding:7px 6px}
+ .cx-environment{font-size:9px}
+ .cx-filters button,.cx-filters button:last-child{font-size:10px}
+}
+
+/* Navigation acceptance fix: use explicit expanded state on desktop */
+@media(min-width:851px){
+ .cx-shell:not(.nav-collapsed) .cx-sidebar{width:226px;min-width:226px;padding:18px 12px}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-brand{justify-content:flex-start}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-brand-icon,
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-brand>div:last-child,
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-workspace,
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-menu-label,
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-sidebar-foot{display:flex}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-menu-label{display:block}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-nav{justify-content:flex-start;font-size:14px;gap:12px;padding:13px}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-nav>span{font-size:21px}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-nav em{display:inline-flex}
+}
+@media(min-width:591px) and (max-width:850px){
+ .cx-shell:not(.nav-collapsed) .cx-sidebar{width:210px;min-width:210px;padding:14px 10px}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-brand{justify-content:flex-start}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-brand-icon,
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-brand>div:last-child,
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-workspace,
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-sidebar-foot{display:flex}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-menu-label{display:block}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-nav{display:flex;justify-content:flex-start;font-size:13px;gap:9px;padding:12px 8px}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-nav em{display:inline-flex}
+}
+@media(max-width:590px){
+ .mobile-menu-open .cx-sidebar nav{display:flex!important;position:relative;z-index:42}
+ .mobile-menu-open .cx-sidebar .cx-nav{display:flex!important;font-size:16px!important;justify-content:flex-start!important}
+ .mobile-menu-open .cx-sidebar .cx-nav>span{font-size:22px}
+}
+
+/* Direct navigation fallback: pages remain accessible even when sidebar is collapsed. */
+.cx-top-nav{display:flex;align-items:center;gap:8px;min-width:0;flex-wrap:wrap}
+.cx-top-nav>span{font-size:12px;color:#8796a5}
+.cx-top-page{appearance:none;border:1px solid transparent;border-radius:8px;background:transparent;color:#65748c;font:inherit;font-size:13px;font-weight:650;cursor:pointer;padding:8px 10px}
+.cx-top-page:hover{background:#f1f4ff;color:#354fba}
+.cx-top-page.active{background:#edf0ff;color:#364fba;border-color:#dce3ff}
+.cx-top-page:focus-visible{outline:3px solid #6875d9;outline-offset:2px}
+.cx-sidebar .cx-nav-text{min-width:0}
+@media(min-width:591px){.cx-shell:not(.nav-collapsed) .cx-sidebar .cx-nav-text{display:inline!important;font-size:14px!important}}
+@media(max-width:850px){.cx-top-nav{gap:2px}.cx-top-page{font-size:11px;padding:7px 6px}}
+@media(max-width:590px){.cx-topbar{height:auto;min-height:58px;gap:6px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}.cx-top-nav{gap:2px}.cx-top-nav>span{display:none}.cx-top-page{font-size:11px;padding:6px}.cx-top-actions{margin-left:auto}}
+
+/* Sidebar state contract. Override legacy contradictory width/display rules. */
+@media(min-width:591px){
+ .cx-shell .cx-sidebar{box-sizing:border-box;overflow:hidden;flex-grow:0!important;flex-shrink:0!important;transition:width .2s ease,flex-basis .2s ease}
+ .cx-shell.nav-collapsed .cx-sidebar{width:76px!important;min-width:76px!important;max-width:76px!important;flex-basis:76px!important;padding:18px 9px!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar{width:236px!important;min-width:236px!important;max-width:236px!important;flex-basis:236px!important;padding:18px 12px!important}
+ .cx-shell.nav-collapsed .cx-sidebar .cx-nav-text{display:none!important}
+ .cx-shell.nav-collapsed .cx-sidebar .cx-nav{font-size:0!important;justify-content:center!important;gap:0!important;padding:13px 8px!important}
+ .cx-shell.nav-collapsed .cx-sidebar .cx-nav>span:first-child{font-size:22px!important;flex:0 0 auto}
+ .cx-shell.nav-collapsed .cx-sidebar .cx-nav em{display:none!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-nav-text{display:inline!important;white-space:normal!important;overflow-wrap:break-word;font-size:14px!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-nav{font-size:14px!important;justify-content:flex-start!important;gap:12px!important;padding:13px 9px!important;min-width:0}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar nav{display:grid!important;min-width:0}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-brand>div:last-child{display:block!important;min-width:0}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-workspace{display:flex!important;min-width:0}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-sidebar-foot{display:block!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-nav em{display:inline-flex!important}
+}
+@media(max-width:590px){
+ .cx-shell .cx-sidebar{width:100%!important;min-width:0!important;max-width:none!important;flex-basis:auto!important}
+ .cx-shell:not(.mobile-menu-open) .cx-sidebar nav{display:none!important}
+ .cx-shell.mobile-menu-open .cx-sidebar nav{display:flex!important}
+ .cx-shell.mobile-menu-open .cx-sidebar .cx-nav-text{display:inline!important;font-size:15px!important}
+}
+
+/* Mobile agent switch: full-width dedicated row, never clipped off-screen. */
+@media(max-width:590px){
+ .cx-conversation>.cx-persona-banner{display:grid!important;grid-template-columns:minmax(0,110px) minmax(0,1fr)!important;grid-template-areas:"portrait intro" "switch switch"!important;gap:12px!important;width:100%!important;min-width:0!important;box-sizing:border-box!important;overflow:visible!important;padding:14px!important}
+ .cx-conversation>.cx-persona-banner .cx-persona-portrait{grid-area:portrait!important;width:100%!important;min-width:0!important;max-width:110px!important;height:136px!important}
+ .cx-conversation>.cx-persona-banner .cx-persona-intro{grid-area:intro!important;min-width:0!important;max-width:100%!important;overflow-wrap:anywhere!important}
+ .cx-conversation>.cx-persona-banner .cx-persona-switch{grid-area:switch!important;position:static!important;display:grid!important;grid-template-columns:1fr 1fr!important;width:100%!important;min-width:0!important;max-width:100%!important;justify-self:stretch!important;align-self:stretch!important;margin:0!important;box-sizing:border-box!important}
+ .cx-conversation>.cx-persona-banner .cx-persona-switch button{display:block!important;width:100%!important;min-width:0!important;min-height:46px!important;padding:10px 14px!important;font-size:15px!important;white-space:nowrap!important;touch-action:manipulation}
+}
+
+/* Final desktop navigation: readable single-line sidebar links. */
+@media(min-width:591px){
+ .cx-shell:not(.nav-collapsed) .cx-sidebar{width:248px!important;min-width:248px!important;max-width:248px!important;flex-basis:248px!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar nav{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:5px!important;width:100%!important;min-width:0!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-nav{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:flex-start!important;flex-wrap:nowrap!important;width:100%!important;min-width:0!important;box-sizing:border-box!important;gap:10px!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-nav>span:first-child{flex:0 0 24px!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-nav-text{display:block!important;flex:1 1 auto!important;min-width:0!important;white-space:nowrap!important;overflow-wrap:normal!important;word-break:normal!important;line-height:1.4!important;text-align:left!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-nav em{flex:0 0 auto!important}
+}
+
+/* Product design polish — deliberate hierarchy, restrained surfaces, and accessible type. */
+:root{--cx-polish-ink:#17243c;--cx-polish-muted:#63748a;--cx-polish-line:#e7ecf3;--cx-polish-accent:#4c5fd3}
+.cx-topbar{background:#fff!important;border-bottom:1px solid var(--cx-polish-line)!important;min-height:62px!important}
+.cx-current-page{font-size:15px;font-weight:750;letter-spacing:-.015em;color:var(--cx-polish-ink);white-space:nowrap}
+.cx-top-actions{margin-left:auto}
+.cx-reset-visible{font-size:12px!important;font-weight:650!important;box-shadow:none!important}
+.cx-ticket-heading h1{font-size:23px!important;letter-spacing:-.035em}
+.cx-ticket-heading p{font-size:13px!important;color:var(--cx-polish-muted)!important}
+.cx-ticket h3{font-size:14px!important;line-height:1.4!important;font-weight:700!important}
+.cx-ticket p{font-size:13px!important;line-height:1.55!important;color:var(--cx-polish-muted)!important}
+.cx-ticket.active{box-shadow:inset 3px 0 0 var(--cx-polish-accent)!important}
+.cx-filters{gap:2px!important}
+.cx-filters button{font-weight:650!important;line-height:1.2!important}
+.cx-conversation-head h2{font-size:21px!important;letter-spacing:-.025em!important}
+.cx-conversation-head p,.cx-persona-intro p{color:var(--cx-polish-muted)!important}
+.cx-persona-kicker,.cx-eyebrow,.cx-context h3{letter-spacing:.09em!important;font-weight:750!important}
+.cx-persona-intro strong{letter-spacing:-.035em!important}
+.cx-message>div p{font-size:15px!important;line-height:1.7!important;color:#35445d!important}
+.cx-analysis-section-title{font-size:12px;font-weight:750;color:#43516c;letter-spacing:.01em;margin:0 0 10px}
+.cx-analysis-grid{gap:10px!important}
+.cx-analysis-grid>div{background:#f8fafc!important;border:1px solid var(--cx-polish-line)!important;border-radius:12px!important}
+.cx-analysis-grid small{font-size:11px!important;letter-spacing:.065em!important;color:#687c8d!important}
+.cx-analysis-grid strong,.cx-analysis-grid p{color:var(--cx-polish-ink)!important}
+.cx-sources{background:#f7f9fc!important;border:1px solid var(--cx-polish-line)!important;border-radius:12px!important}
+.cx-reply-label strong{font-size:14px!important}
+.cx-reply{font-size:14px!important;line-height:1.65!important;border-color:#dfe6ef!important;border-radius:12px!important}
+.cx-reply:focus,.cx-search:focus-within{outline:2px solid #b7c4ff!important;outline-offset:1px}
+.cx-reply-actions{gap:8px!important;flex-wrap:wrap!important}
+.cx-reply-actions button{min-height:38px!important;font-size:12px!important;font-weight:700!important}
+.cx-context-row{padding:15px 0!important;border-color:var(--cx-polish-line)!important}
+.cx-context-row span{color:#68788c!important;font-size:13px!important}
+.cx-context-row strong{color:var(--cx-polish-ink)!important;font-size:13px!important}
+.cx-playbook{border-color:var(--cx-polish-line)!important;border-radius:13px!important}
+.cx-playbook b{font-size:13px!important;color:var(--cx-polish-ink)!important}
+.cx-playbook p,.cx-policy-notice{font-size:13px!important;line-height:1.6!important;color:#65768a!important}
+.cx-conversation,.cx-context,.cx-ticket-column{min-width:0}
+@media(min-width:591px){
+ .cx-top-nav{display:none!important}
+ .cx-current-page{display:block!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar{width:248px!important;min-width:248px!important;max-width:248px!important;flex-basis:248px!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-nav-text{white-space:nowrap!important;word-break:normal!important}
+}
+@media(max-width:590px){
+ .cx-current-page{display:none!important}
+ .cx-top-nav{display:flex!important}
+ .cx-top-page{min-height:36px!important}
+ .cx-ticket-heading h1{font-size:22px!important}
+ .cx-message>div p{font-size:15px!important}
+ .cx-reply-actions button{min-height:44px!important}
+}
+
+/* Visual redesign v3 — desktop-only structural changes, preserving mobile agent switch. */
+@media(min-width:1100px){
+ .cx-shell:not(.nav-collapsed) .cx-sidebar{width:216px!important;min-width:216px!important;max-width:216px!important;flex-basis:216px!important}
+ .cx-inbox{grid-template-columns:minmax(255px,285px) minmax(0,1fr) minmax(232px,250px)!important}
+ .cx-conversation>.cx-persona-banner{min-height:0!important;padding:16px 22px!important;gap:16px!important;align-items:center!important;background:linear-gradient(110deg,#f7f9fe 0%,#fff 75%)!important;border-bottom:1px solid #e7ecf3!important}
+ .cx-conversation>.cx-persona-banner .cx-persona-portrait{width:100px!important;min-width:100px!important;max-width:100px!important;height:110px!important;border-radius:13px!important}
+ .cx-conversation>.cx-persona-banner .cx-persona-intro strong{font-size:21px!important}
+ .cx-conversation>.cx-persona-banner .cx-persona-intro p{font-size:13px!important;margin-top:3px!important}
+ .cx-conversation>.cx-persona-banner .cx-persona-switch{margin-left:auto!important;flex-shrink:0!important}
+ .cx-ticket-heading{padding-top:18px!important;padding-bottom:14px!important}
+ .cx-ticket{padding-top:17px!important;padding-bottom:17px!important}
+ .cx-context{padding-left:17px!important;padding-right:17px!important}
+}
+@media(min-width:591px) and (max-width:1099px){
+ .cx-conversation>.cx-persona-banner .cx-persona-portrait{max-width:125px!important;width:125px!important;min-width:125px!important;height:135px!important}
+}
+.cx-brand-icon{transform:scale(.88);transform-origin:center}
+.cx-brand strong{letter-spacing:-.025em!important}
+.cx-persona-kicker{font-size:10px!important;letter-spacing:.11em!important;color:#64758d!important}
+.cx-analysis-card,.cx-notes{box-shadow:0 8px 26px rgba(26,46,86,.035)!important;border:1px solid #e5ebf3!important;border-radius:16px!important}
+.cx-analysis-section-title{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-bottom:10px;margin-bottom:12px;border-bottom:1px solid #e7ecf3;font-size:13px!important;letter-spacing:0!important}
+.cx-insights-meta{font-size:10px;color:#748398;letter-spacing:.08em;font-weight:700}
+.cx-analysis-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
+.cx-analysis-grid>div{padding:12px 14px!important;background:#fff!important;border:1px solid #e5ebf3!important}
+.cx-analysis-grid>div.cx-full{grid-column:1/-1!important;background:#f6f8fd!important}
+.cx-sources{padding:12px 14px!important;margin-top:10px!important;background:#fff!important}
+.cx-reply-label{margin-top:17px!important}
+.cx-reply{background:#fff!important;min-height:105px!important}
+.cx-primary{background:#0b9189!important;border-radius:10px!important;font-weight:750!important;box-shadow:0 4px 12px rgba(11,145,137,.12)!important}
+.cx-primary:hover{background:#087d76!important}
+.cx-playbook{background:#fff!important;padding:13px!important}
+.cx-policy-notice{background:#f5f7fa!important;border-radius:11px!important}
+.cx-context-row{padding:12px 0!important}
+.cx-context-row strong{font-weight:700!important}
+.cx-reset-visible{background:#f8f9fc!important;border-color:#e6ebf4!important;color:#55647d!important}
+.cx-filters button.active{background:#e9edff!important;color:#3446a4!important}
+.cx-ticket.active{background:#f1f4ff!important}
+@media(max-width:590px){
+ .cx-conversation>.cx-persona-banner .cx-persona-portrait{width:100%!important;max-width:110px!important;min-width:0!important;height:136px!important}
+ .cx-analysis-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .cx-analysis-grid>div.cx-full{grid-column:1/-1!important}
+}
+
+/* Alignment refinement — coherent brand lockup, readable filters and balanced assistant portrait. */
+@media(min-width:1100px){
+ .cx-shell:not(.nav-collapsed) .cx-sidebar{width:242px!important;min-width:242px!important;max-width:242px!important;flex-basis:242px!important}
+ .cx-inbox{grid-template-columns:minmax(310px,325px) minmax(0,1fr) minmax(235px,250px)!important}
+ .cx-conversation>.cx-persona-banner{padding:17px 20px!important;gap:18px!important}
+ .cx-conversation>.cx-persona-banner .cx-persona-portrait{width:142px!important;min-width:142px!important;max-width:142px!important;height:152px!important}
+ .cx-conversation>.cx-persona-banner .cx-persona-intro strong{font-size:23px!important}
+}
+@media(min-width:591px){
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-brand{display:grid!important;grid-template-columns:34px 36px minmax(0,1fr)!important;gap:9px!important;align-items:center!important;padding-left:13px!important;padding-right:13px!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-brand-icon{width:36px!important;height:36px!important;min-width:36px!important;display:grid!important;place-items:center!important;transform:none!important;line-height:1!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-brand>div:last-child{min-width:0!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-brand strong{font-size:16px!important;line-height:1.18!important;letter-spacing:-.035em!important;overflow-wrap:normal!important;word-break:normal!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-brand small{font-size:8px!important;letter-spacing:.1em!important}
+ .cx-filters{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:3px!important;padding-left:7px!important;padding-right:7px!important}
+ .cx-filters button,.cx-filters button:last-child{min-width:0!important;width:100%!important;padding:10px 2px!important;font-size:10px!important;line-height:1.25!important;white-space:normal!important;overflow-wrap:normal!important;word-break:normal!important}
+}
+@media(min-width:591px) and (max-width:1099px){
+ .cx-filters button,.cx-filters button:last-child{font-size:9px!important}
+}
+
+/* Product UI refinement: intentionally restrained, no decorative AI gradients. */
+@media(min-width:1100px){
+ .cx-shell:not(.nav-collapsed) .cx-sidebar{width:252px!important;min-width:252px!important;max-width:252px!important;flex-basis:252px!important}
+ .cx-inbox{grid-template-columns:minmax(330px,345px) minmax(0,1fr) minmax(235px,255px)!important}
+ .cx-conversation>.cx-persona-banner{padding:18px 24px!important;background:#fff!important;min-height:0!important}
+ .cx-conversation>.cx-persona-banner .cx-persona-portrait{width:132px!important;min-width:132px!important;max-width:132px!important;height:142px!important}
+}
+@media(min-width:591px){
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-brand{grid-template-columns:34px 34px minmax(0,1fr)!important;gap:10px!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-brand-icon{width:34px!important;height:34px!important;min-width:34px!important;display:grid!important;place-items:center!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-brand strong{font-size:16px!important;line-height:1.3!important;word-break:normal!important}
+ .cx-filters{display:flex!important;gap:4px!important;align-items:stretch!important;padding:7px 10px 10px!important;overflow-x:auto!important;scrollbar-width:thin!important}
+ .cx-filters button,.cx-filters button:last-child{flex:1 0 auto!important;width:auto!important;min-width:0!important;padding:9px 7px!important;font-size:11px!important;white-space:nowrap!important;line-height:1.25!important;letter-spacing:-.01em!important}
+ .cx-filters button:nth-child(3){white-space:normal!important;max-width:76px!important;min-width:62px!important}
+}
+.cx-brand-icon{background:#182c52!important;background-image:none!important;border-radius:10px!important;color:#fff!important;font-weight:800!important;font-size:12px!important;letter-spacing:-.04em!important;transform:none!important;box-shadow:none!important}
+.cx-brand small{color:#8792a4!important}
+.cx-persona-banner{background:#fff!important}
+.cx-persona-kicker{color:#77849a!important;font-size:10px!important;letter-spacing:.08em!important}
+.cx-persona-intro p{color:#65758a!important}
+.cx-analysis-card,.cx-notes{box-shadow:none!important;border-color:#e3e8f0!important}
+.cx-analysis-grid>div{background:#fff!important;border:1px solid #e4e9f0!important}
+.cx-analysis-grid>div.cx-full{background:#f8f9fc!important}
+.cx-playbook{box-shadow:none!important;border-color:#e4e9f0!important}
+.cx-reset-visible{box-shadow:none!important}
+.cx-context-row{border-color:#edf0f4!important}
+@media(max-width:590px){
+ .cx-brand-icon{font-size:12px!important}
+ .cx-filters{display:flex!important;gap:6px!important;overflow-x:auto!important}
+ .cx-filters button{flex:0 0 auto!important;white-space:nowrap!important}
+}
