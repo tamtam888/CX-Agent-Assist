@@ -74,3 +74,16 @@ test('collapsed sidebar hides text and expanded sidebar reserves full width', ()
   assert.match(polish, /\.cx-shell\.nav-collapsed \.cx-sidebar \.cx-nav-text\{display:none!important/);
   assert.doesNotMatch(app, /width:navCollapsed\?76:226/);
 });
+
+test('design polish keeps a single desktop navigation hierarchy and mobile fallback', () => {
+  assert.match(app, /className="cx-current-page"/);
+  assert.match(polish, /@media\(min-width:591px\)\{\s*\.cx-top-nav\{display:none!important/);
+  assert.match(polish, /@media\(max-width:590px\)\{\s*\.cx-current-page\{display:none!important/);
+  assert.match(polish, /\.cx-top-nav\{display:flex!important/);
+});
+test('conversation insight hierarchy and editable reply remain intact', () => {
+  assert.match(app, /Conversation insights/);
+  assert.match(app, /className="cx-reply"/);
+  assert.match(app, /onChange=\{e=>setDraft\(e.target.value\)\}/);
+  assert.match(polish, /\.cx-analysis-grid>div\{background:#f8fafc!important/);
+});
