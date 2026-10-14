@@ -193,3 +193,13 @@
  .cx-conversation>.cx-persona-banner .cx-persona-switch{grid-area:switch!important;position:static!important;display:grid!important;grid-template-columns:1fr 1fr!important;width:100%!important;min-width:0!important;max-width:100%!important;justify-self:stretch!important;align-self:stretch!important;margin:0!important;box-sizing:border-box!important}
  .cx-conversation>.cx-persona-banner .cx-persona-switch button{display:block!important;width:100%!important;min-width:0!important;min-height:46px!important;padding:10px 14px!important;font-size:15px!important;white-space:nowrap!important;touch-action:manipulation}
 }
+
+/* Final desktop navigation: readable single-line sidebar links. */
+@media(min-width:591px){
+ .cx-shell:not(.nav-collapsed) .cx-sidebar{width:248px!important;min-width:248px!important;max-width:248px!important;flex-basis:248px!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar nav{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:5px!important;width:100%!important;min-width:0!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-nav{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:flex-start!important;flex-wrap:nowrap!important;width:100%!important;min-width:0!important;box-sizing:border-box!important;gap:10px!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-nav>span:first-child{flex:0 0 24px!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-nav-text{display:block!important;flex:1 1 auto!important;min-width:0!important;white-space:nowrap!important;overflow-wrap:normal!important;word-break:normal!important;line-height:1.4!important;text-align:left!important}
+ .cx-shell:not(.nav-collapsed) .cx-sidebar .cx-nav em{flex:0 0 auto!important}
+}
