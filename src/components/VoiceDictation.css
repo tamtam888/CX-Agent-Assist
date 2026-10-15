@@ -1,0 +1,10 @@
+.cx-dictation{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-right:auto;min-width:0}
+.cx-dictation-button{display:inline-flex;align-items:center;gap:7px;padding:10px 13px;border:1px solid #d9e3f0;border-radius:10px;background:#fff;color:#203d67;font:inherit;font-weight:650;cursor:pointer}
+.cx-dictation-button:hover:not(:disabled){background:#edf2ff;border-color:#bac9ed}
+.cx-dictation-button.is-listening{color:#a62840;border-color:#e5a3ae;background:#fff0f2}
+.cx-dictation-button:disabled{cursor:not-allowed;opacity:.55}
+.cx-dictation-button:focus-visible{outline:3px solid #7484ec;outline-offset:2px}
+.cx-dictation-hint{font-size:12px;color:#77899a}
+.cx-dictation-status{font-size:12px;color:#526a82;flex-basis:100%}
+.cx-dictation-status:empty{display:none}
+@media(max-width:590px){.cx-dictation{flex-basis:100%;margin-bottom:6px}.cx-dictation-button{min-height:42px}}
