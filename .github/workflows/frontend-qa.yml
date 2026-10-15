@@ -1,7 +1,7 @@
 name: Frontend QA
 on:
   push:
-    branches: [main, feature/cx-copilot-v2]
+    branches: [main, feature/cx-copilot-v2, feature/test-case-voice-dictation]
   pull_request:
     branches: [main]
   workflow_dispatch:
