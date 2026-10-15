@@ -6,7 +6,7 @@ const getRecognition = () => {
   return window.SpeechRecognition || window.webkitSpeechRecognition || null;
 };
 
-export function appendTranscript(base, spoken, maxLength = 2000) {
+function appendTranscript(base, spoken, maxLength = 2000) {
   const prefix = base.trimEnd();
   const suffix = spoken.trim();
   if (!suffix) return prefix.slice(0, maxLength);
