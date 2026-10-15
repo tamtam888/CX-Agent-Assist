@@ -120,3 +120,16 @@
 .cx-inbox .cx-ticket p{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
 @media(max-width:1000px){.cx-inbox{grid-template-columns:275px minmax(0,1fr)!important}}
 @media(max-width:720px){.cx-inbox{grid-template-columns:minmax(0,1fr)!important}.cx-inbox .cx-context{position:fixed;right:12px;top:75px;max-height:calc(100dvh - 90px)}.cx-inbox .cx-persona-banner{padding:12px 16px!important}.cx-inbox .cx-conversation-head,.cx-inbox .cx-conversation-body{padding:16px!important}}
+
+/* Product narrative, deliberately integrated into the SaaS dashboard */
+.cx-product-intro{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:16px 28px;align-items:center;margin-top:18px;padding:22px 26px;border:1px solid #e1eaf2;background:#fff;border-radius:15px}
+.cx-product-intro .cx-eyebrow{font-size:10px;color:#66869b;letter-spacing:.12em}
+.cx-product-intro h2{font-size:19px;letter-spacing:-.02em;color:#1c3555;margin:8px 0}
+.cx-product-intro p{font-size:12px;line-height:1.65;color:#6e8094;margin:0;max-width:420px}
+.cx-product-intro-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.cx-product-intro-steps>div{padding:12px 10px;background:#f5f9fb;border-radius:10px;display:flex;flex-direction:column;gap:7px}
+.cx-product-intro-steps strong{font-size:11px;color:#214c69}
+.cx-product-intro-steps small{font-size:10px;color:#7b8da1;line-height:1.45}
+.cx-product-disclaimer{grid-column:1/-1;font-size:10px;color:#8998a8;border-top:1px solid #eef2f5;padding-top:12px}
+@media(max-width:850px){.cx-product-intro{grid-template-columns:1fr}}
+@media(max-width:500px){.cx-product-intro{padding:18px}.cx-product-intro-steps{grid-template-columns:1fr}}
