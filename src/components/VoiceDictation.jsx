@@ -105,6 +105,7 @@ export default function VoiceDictation({ value, onTranscript, maxLength = 2000 }
     }
   };
 
+  const listening = status === 'listening';
   return <div className="cx-dictation">
     <button type="button" className={'cx-dictation-button' + (status === 'listening' ? ' is-listening' : '')}
       onClick={status === 'listening' ? stop : start}
@@ -112,7 +113,9 @@ export default function VoiceDictation({ value, onTranscript, maxLength = 2000 }
       aria-label={status === 'listening' ? 'Stop dictation' : 'Start voice dictation'}
       aria-pressed={status === 'listening'}
       title={!constructorAvailable ? 'Speech recognition is not supported in this browser' : undefined}>
-      <span aria-hidden="true">🎙</span> {status === 'listening' ? 'Stop dictation' : status === 'processing' ? 'Finishing…' : 'Dictate issue'}
+      <svg className="cx-dictation-icon" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        {listening ? <><rect x="6" y="6" width="12" height="12" rx="2" /></> : <><rect x="9" y="2" width="6" height="12" rx="3" /><path d="M5 10a7 7 0 0 0 14 0M12 17v5m-4 0h8" /></>}
+      </svg> {status === 'listening' ? 'Stop dictation' : status === 'processing' ? 'Finishing…' : 'Dictate issue'}
     </button>
     <span className="cx-dictation-hint">English · Demo only</span>
     <span className="cx-dictation-status" role="status" aria-live="polite">
