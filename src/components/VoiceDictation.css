@@ -8,3 +8,7 @@
 .cx-dictation-status{font-size:12px;color:#526a82;flex-basis:100%}
 .cx-dictation-status:empty{display:none}
 @media(max-width:590px){.cx-dictation{flex-basis:100%;margin-bottom:6px}.cx-dictation-button{min-height:42px}}
+
+.cx-dictation-icon{display:block;flex-shrink:0;width:18px;height:18px}
+.cx-dictation-button.is-listening .cx-dictation-icon{color:#b4233e}
+@media(prefers-reduced-motion:no-preference){.cx-dictation-button.is-listening .cx-dictation-icon{animation:cx-dictation-pulse 1.4s ease-in-out infinite}@keyframes cx-dictation-pulse{50%{opacity:.55}}}
