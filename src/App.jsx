@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import VoiceDictation from './components/VoiceDictation.jsx';
 import './App.css';
 import './polish.css';
