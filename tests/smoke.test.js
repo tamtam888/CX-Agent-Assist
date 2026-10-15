@@ -58,7 +58,7 @@ test('collapsed navigation and visible reset are discoverable', () => {
 
 test('page navigation remains visible independently of the sidebar', () => {
   assert.match(app, /className="cx-top-nav"/);
-  assert.match(app, /'Overview','Inbox','Knowledge base'\]\.map/);
+  assert.match(app, /'Overview','Inbox','Test a case','Knowledge base'\]\.map/);
   assert.match(app, /onClick=\{\(\)=>\{setPage\(name\);setMobileMenuOpen\(false\)\}\}/);
   assert.match(polish, /\.cx-top-page\.active/);
 });
