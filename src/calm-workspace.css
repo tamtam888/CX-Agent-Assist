@@ -133,3 +133,18 @@
 .cx-product-disclaimer{grid-column:1/-1;font-size:10px;color:#8998a8;border-top:1px solid #eef2f5;padding-top:12px}
 @media(max-width:850px){.cx-product-intro{grid-template-columns:1fr}}
 @media(max-width:500px){.cx-product-intro{padding:18px}.cx-product-intro-steps{grid-template-columns:1fr}}
+
+
+/* Overview visual finish: subtle process hierarchy and interaction feedback */
+.cx-product-intro-steps>div{position:relative;min-height:82px;padding:15px 14px 14px;border:1px solid #e6edf3;background:linear-gradient(145deg,#f6fafc,#f0f6f9);transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.cx-product-intro-steps>div::before{content:"";width:24px;height:3px;border-radius:8px;background:#0c918e;display:block;margin-bottom:3px;opacity:.8}
+.cx-product-intro-steps>div:nth-child(2)::before{background:#6076d7}
+.cx-product-intro-steps>div:nth-child(3)::before{background:#2d668b}
+.cx-product-intro-steps strong{font-size:12px;letter-spacing:-.01em}
+.cx-product-intro-steps small{font-size:11px;line-height:1.55;color:#637c91}
+.cx-product-intro-steps>div:hover{transform:translateY(-2px);border-color:#cfdee8;box-shadow:0 7px 18px #1a3a5910}
+.cx-dashboard .cx-welcome-primary,.cx-dashboard .cx-welcome-secondary,.cx-dashboard button{transition:transform .16s ease,box-shadow .16s ease,background-color .16s ease,border-color .16s ease}
+.cx-dashboard button:not(:disabled):hover{transform:translateY(-1px)}
+.cx-dashboard button:focus-visible,.cx-sidebar button:focus-visible{outline:3px solid #62a9d8;outline-offset:3px}
+@media(max-width:500px){.cx-product-intro-steps{gap:8px}.cx-product-intro-steps>div{min-height:auto;padding:12px 14px}}
+@media(prefers-reduced-motion:reduce){.cx-product-intro-steps>div,.cx-dashboard button{transition:none!important}.cx-product-intro-steps>div:hover,.cx-dashboard button:not(:disabled):hover{transform:none}}
