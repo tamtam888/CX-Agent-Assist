@@ -43,7 +43,11 @@ test('final polish stylesheet is imported and readable typography is configured'
 });
 test('reset returns persona, navigation and ticket data to defaults', () => {
   assert.match(app, /setTickets\(initial\);setPersona\('nova'\)/);
-  assert.match(app, /setNavCollapsed\(true\);setToast\('Demo reset'\)/);
+  assert.match(app, /setPage\('Overview'\)/);
+  assert.match(app, /setInboxDetailsOpen\(false\)/);
+  assert.match(app, /setInboxNotesOpen\(false\)/);
+  assert.match(app, /setMobileMenuOpen\(false\)/);
+  assert.match(app, /setNavCollapsed\(true\)/);
 });
 test('filter and search choose matching tickets and clear stale analysis', () => {
   assert.match(app, /const first=tickets\.find\(t=>f==='All'\|\|t\.status===f\)/);
