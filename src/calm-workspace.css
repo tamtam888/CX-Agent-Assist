@@ -148,3 +148,21 @@
 .cx-dashboard button:focus-visible,.cx-sidebar button:focus-visible{outline:3px solid #62a9d8;outline-offset:3px}
 @media(max-width:500px){.cx-product-intro-steps{gap:8px}.cx-product-intro-steps>div{min-height:auto;padding:12px 14px}}
 @media(prefers-reduced-motion:reduce){.cx-product-intro-steps>div,.cx-dashboard button{transition:none!important}.cx-product-intro-steps>div:hover,.cx-dashboard button:not(:disabled):hover{transform:none}}
+
+/* Illustrative product workflow in the Overview hero */
+.cx-dashboard-hero-art.cx-hero-workflow{min-height:265px;width:min(100%,365px);margin-left:auto;display:flex;flex-direction:column;justify-content:center;gap:5px;padding:10px 0}
+.cx-workflow-heading{display:flex;align-items:center;justify-content:space-between;color:#c1deee;font-size:10px;font-weight:750;letter-spacing:.12em;margin-bottom:6px}
+.cx-workflow-heading span{font-size:9px;border:1px solid #ffffff4d;border-radius:20px;padding:3px 8px;color:#d9f1f5}
+.cx-workflow-message,.cx-workflow-insight,.cx-workflow-draft{border-radius:12px;padding:12px 15px;box-shadow:0 10px 24px #0c1d3421}
+.cx-workflow-message{background:#ffffffed;color:#1d3954;align-self:flex-end;width:90%}
+.cx-workflow-insight{display:flex;align-items:center;gap:12px;background:#bdeee526;color:#fff;border:1px solid #b6e9e45c;width:96%;align-self:center}
+.cx-workflow-draft{background:#fff;color:#1d3954;width:100%}
+.cx-workflow-label{display:block;font-size:9px;font-weight:800;letter-spacing:.1em;color:#66889b}
+.cx-workflow-insight .cx-workflow-label{color:#bde8e7}
+.cx-workflow-message p,.cx-workflow-draft p{font-size:12px;line-height:1.5;margin:5px 0 0;color:inherit}
+.cx-workflow-insight strong{font-size:13px;display:block;margin-top:5px}
+.cx-workflow-dot{color:#9fe2d4}
+.cx-workflow-symbol{width:35px;height:35px;display:grid;place-items:center;flex:none;background:#d3f5ed22;border:1px solid #b8e9e95c;border-radius:11px;font-size:25px;color:#b5f6e8}
+.cx-workflow-connector{text-align:center;color:#b5e6e9;font-size:13px;line-height:13px}
+@media(max-width:900px){.cx-dashboard-hero-art.cx-hero-workflow{width:min(100%,350px);min-height:245px}}
+@media(max-width:600px){.cx-dashboard-hero-art.cx-hero-workflow{margin:20px 0 0;width:100%;max-width:390px;min-height:auto}.cx-workflow-message,.cx-workflow-insight,.cx-workflow-draft{padding:11px 13px}}
