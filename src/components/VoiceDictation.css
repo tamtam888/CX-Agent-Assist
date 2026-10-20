@@ -12,3 +12,8 @@
 .cx-dictation-icon{display:block;flex-shrink:0;width:18px;height:18px}
 .cx-dictation-button.is-listening .cx-dictation-icon{color:#b4233e}
 @media(prefers-reduced-motion:no-preference){.cx-dictation-button.is-listening .cx-dictation-icon{animation:cx-dictation-pulse 1.4s ease-in-out infinite}@keyframes cx-dictation-pulse{50%{opacity:.55}}}
+
+.cx-dictation-icon{display:block;flex-shrink:0;width:18px;height:18px}
+.cx-dictation-button.is-listening .cx-dictation-icon{animation:cx-dictation-pulse 1.5s ease-in-out infinite}
+@keyframes cx-dictation-pulse{50%{opacity:.5}}
+@media(prefers-reduced-motion:reduce){.cx-dictation-button.is-listening .cx-dictation-icon{animation:none}}
