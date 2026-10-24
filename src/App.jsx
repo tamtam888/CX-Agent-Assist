@@ -42,6 +42,18 @@ const sources=kb.filter(x=>x.category===current.category&&(current.category!=='D
 const patch=change=>setTickets(old=>old.map(t=>t.id===current.id?{...t,...change}:t));
 const changeStatus=status=>{patch({status});setToast('Ticket status updated to '+status);};
 const testCase=()=>{const message=caseMessage.trim();if(!message)return;const m=message.toLowerCase();const billing=/\b(refund|charged?|billing|payment|subscription|invoice|transaction|duplicate)\b|חיוב|תשלום|החזר|חשבונית/.test(m);const technical=/\b(password|login|log in|account|reset|error|bug|access|sign in)\b|סיסמ|כניס|תקלה|חשבון/.test(m);const feedback=/\b(thank|thanks|feedback|appreciate|excellent service)\b|תודה|שירות טוב/.test(m);const delivery=/\b(delivery|deliver|order|shipping|parcel|address|shipment|tracking|package)\b|משלוח|הזמנה|כתובת|חבילה/.test(m);const detected=billing?'Billing':technical?'Technical':delivery?'Delivery':feedback?'Feedback':null;if(!detected){setCaseResult({unknown:true});setCaseReply('');return;}if(caseCategory!=='Auto-detect'&&caseCategory!==detected){setCaseResult({mismatch:true,detected});setCaseReply('');return;}const category=detected;const guidance=category==='Delivery'?deliveryGuidance(classifyDeliveryIntent(message)):null;const source=kb.find(a=>a.category===category&&(!guidance||a.id===guidance.sourceId));if(!source&&!guidance){setCaseResult({unknown:true});setCaseReply('');return;}const urgent=/\b(urgent|asap|immediately|emergency)\b|עכשיו|דחוף/.test(m);setCaseResult({category,priority:urgent?'High':category==='Feedback'?'Low':'Medium',source,step:guidance?.step||next[category]});setCaseReply(guidance?.reply||drafts[category]);};
+const runAiCase=async()=>{
+ if(aiBusy||!caseMessage.trim())return;
+ setAiBusy(true);setAiError('');setCaseResult(null);setCaseReply('');
+ const history=caseConversation.flatMap(turn=>[{role:'user',content:turn.customer},{role:'assistant',content:turn.reply}]).slice(-12);
+ try{
+  const response=await fetch('/api/agent',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:caseMessage.trim(),agent:persona==='nova'?'Gal':'Daniel',history})});
+  const data=await response.json();
+  if(!response.ok||typeof data.reply!=='string')throw new Error(data.error||'Unable to generate a reply.');
+  setCaseResult({ai:true});setCaseReply(data.reply);
+ }catch(error){setAiError(error.message||'AI request failed.');}
+ finally{setAiBusy(false);}
+};
 const addCaseTurn=()=>{if(!caseResult||caseResult.unknown||caseResult.mismatch||!caseReply.trim()||!caseMessage.trim())return;setCaseConversation(old=>[...old,{customer:caseMessage.trim(),reply:caseReply.trim(),agent:persona==='nova'?'Gal':'Daniel'}]);setCaseMessage('');setCaseResult(null);setCaseReply('');setDictationResetKey(key=>key+1);};
 const showCategory=category=>{setPage('Inbox');setSearch(category);setFilter('All');setAnalyzed(false);setDraft('');setMobileMenuOpen(false);};
 const choose=t=>{setActiveId(t.id);setPage('Inbox');setAnalyzed(false);setDraft('');setNote('');setToast('');};
