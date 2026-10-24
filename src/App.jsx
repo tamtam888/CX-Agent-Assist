@@ -29,6 +29,9 @@ const read=()=>{try{const x=JSON.parse(localStorage.getItem('cx-copilot-demo'));
 function App(){
 const [dictationResetKey,setDictationResetKey]=useState(0);
 const [caseConversation,setCaseConversation]=useState([]);
+const [caseMode,setCaseMode]=useState('demo');
+const [aiBusy,setAiBusy]=useState(false);
+const [aiError,setAiError]=useState('');
 const [inboxDetailsOpen,setInboxDetailsOpen]=useState(false),[inboxNotesOpen,setInboxNotesOpen]=useState(false);
 const [caseCategory,setCaseCategory]=useState('Auto-detect'),[caseMessage,setCaseMessage]=useState(''),[caseResult,setCaseResult]=useState(null),[caseReply,setCaseReply]=useState('');const [kbCategory,setKbCategory]=useState('All'),[kbOpen,setKbOpen]=useState(null);const [navCollapsed,setNavCollapsed]=useState(true);const [mobileMenuOpen,setMobileMenuOpen]=useState(false);const [persona,setPersona]=useState(()=>{try{return localStorage.getItem('cx-copilot-persona')==='leo'?'leo':'nova'}catch{return 'nova'}}),[tickets,setTickets]=useState(read),[activeId,setActiveId]=useState('CX-1042'),[page,setPage]=useState('Overview'),[search,setSearch]=useState(''),[filter,setFilter]=useState('All'),[analyzed,setAnalyzed]=useState(false),[draft,setDraft]=useState(''),[note,setNote]=useState(''),[toast,setToast]=useState(''),[kbSearch,setKbSearch]=useState('');
 useEffect(()=>{try{localStorage.setItem('cx-copilot-demo',JSON.stringify(tickets));}catch{/* no storage */}},[tickets]);
