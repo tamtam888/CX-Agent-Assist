@@ -1,3 +1,4 @@
+/* global process */
 // Vercel serverless endpoint. Keep OPENAI_API_KEY in Vercel environment variables.
 const knowledge = [
   { id: 'KB-01', category: 'Delivery', title: 'Delayed shipment protocol', content: 'Verify order and carrier tracking. After three business days without a scan, initiate carrier investigation. Refunds require eligibility review.' },
