@@ -203,3 +203,14 @@
 @media(max-width:1050px){.cx-case-layout{grid-template-columns:1fr!important}.cx-chat-preview{position:static!important}.cx-chat-body{min-height:300px!important}}
 @media(max-width:960px){.cx-dashboard-lower{grid-template-columns:1fr!important}.cx-dashboard-hero{padding:34px!important}}
 @media(max-width:590px){.cx-dashboard-hero{padding:26px!important;min-height:0!important}.cx-dashboard-hero h1{font-size:37px!important}.cx-chat-body{padding:16px!important}}
+
+/* Agent handoff confirmation */
+.cx-agent-switch-overlay{position:fixed;inset:0;z-index:9999;background:rgba(18,30,50,.48);display:flex;align-items:center;justify-content:center;padding:20px}
+.cx-agent-switch-dialog{width:min(100%,440px);background:#fff;color:#172b49;border-radius:18px;padding:28px;box-shadow:0 18px 60px rgba(18,30,50,.22)}
+.cx-agent-switch-dialog h2{font-size:22px;margin:0 0 12px}
+.cx-agent-switch-dialog p{font-size:14px;line-height:1.6;margin:0 0 22px;color:#506078}
+.cx-agent-switch-actions{display:flex;flex-wrap:wrap;gap:10px}
+.cx-agent-switch-actions button{cursor:pointer;border:1px solid #d7e0ec;border-radius:10px;padding:11px 13px;background:#fff;color:#172b49;font:inherit;font-weight:600}
+.cx-agent-switch-actions button:first-child{background:#008f88;border-color:#008f88;color:#fff}
+.cx-agent-switch-actions button:focus-visible{outline:3px solid #6b9df5;outline-offset:2px}
+@media(max-width:590px){.cx-agent-switch-dialog{padding:22px}.cx-agent-switch-actions{flex-direction:column}.cx-agent-switch-actions button{width:100%}}
