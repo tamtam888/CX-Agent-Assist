@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" role="img" aria-labelledby="title desc"><title id="title">Three stacked hardcover books</title><desc id="desc">Three separate hardcover books with rounded spines, thick paper page edges, top covers, and legible titles: Policies, Procedures and Best practices.</desc><defs><filter id="book-shadow" x="-30%" y="-60%" width="170%" height="220%"><feDropShadow dx="2" dy="7" stdDeviation="5" flood-color="#405474" flood-opacity=".18"/></filter></defs><ellipse cx="266" cy="318" rx="170" ry="11" fill="#64779d" opacity=".13"/><g transform="translate(94 202) rotate(-3 164 33)" filter="url(#book-shadow)">
+<!-- bottom hard cover -->
+<path d="M22 63 Q20 67 26 71 L310 71 Q321 71 324 65 L325 72 Q321 80 310 80 L27 80 Q16 79 16 69 Z" fill="#8e9bb8"/>
+<!-- paper block -->
+<path d="M40 20 L312 20 Q317 20 317 26 L317 66 Q317 70 311 70 L40 70 Z" fill="#fffefa" stroke="#c5cfde" stroke-width="1.6"/>
+<path d="M44 39 L313 39" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 41.65 L313 41.65" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 44.3 L313 44.3" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 46.95 L313 46.95" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 49.6 L313 49.6" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 52.25 L313 52.25" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 54.9 L313 54.9" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 57.55 L313 57.55" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 60.2 L313 60.2" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 62.849999999999994 L313 62.849999999999994" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 65.5 L313 65.5" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/>
+<!-- top cover is a broad angled book board -->
+<path d="M22 14 L303 5 Q314 4 319 13 L324 27 L41 35 Z" fill="#edf0fa" stroke="#8e9bb8" stroke-width="2.2" stroke-linejoin="round"/>
+<!-- cloth-covered curved book spine -->
+<path d="M22 14 Q11 18 11 30 L11 59 Q11 71 25 73 L41 70 L41 35 Z" fill="#b6c1d8" stroke="#8e9bb8" stroke-width="2.2"/>
+<path d="M19 22 Q17 26 17 34 L17 60 Q18 66 26 68" fill="none" stroke="#f9fcff" stroke-width="2.3" opacity=".7"/>
+<path d="M36 33 L36 68" stroke="#8e9bb8" stroke-width="1.4" opacity=".75"/>
+<!-- title printed on the visible front cover, unobscured by other books -->
+<text x="174" y="25" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" text-anchor="middle" fill="#263f69">Best practices</text>
+<path d="M59 31 L287 23" stroke="#fff" stroke-width="1.4" opacity=".38"/>
+</g><g transform="translate(109 126) rotate(2 164 33)" filter="url(#book-shadow)">
+<!-- bottom hard cover -->
+<path d="M22 63 Q20 67 26 71 L310 71 Q321 71 324 65 L325 72 Q321 80 310 80 L27 80 Q16 79 16 69 Z" fill="#7762b9"/>
+<!-- paper block -->
+<path d="M40 20 L312 20 Q317 20 317 26 L317 66 Q317 70 311 70 L40 70 Z" fill="#fffefa" stroke="#c5cfde" stroke-width="1.6"/>
+<path d="M44 39 L313 39" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 41.65 L313 41.65" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 44.3 L313 44.3" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 46.95 L313 46.95" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 49.6 L313 49.6" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 52.25 L313 52.25" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 54.9 L313 54.9" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 57.55 L313 57.55" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 60.2 L313 60.2" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 62.849999999999994 L313 62.849999999999994" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 65.5 L313 65.5" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/>
+<!-- top cover is a broad angled book board -->
+<path d="M22 14 L303 5 Q314 4 319 13 L324 27 L41 35 Z" fill="#c5b4f5" stroke="#7762b9" stroke-width="2.2" stroke-linejoin="round"/>
+<!-- cloth-covered curved book spine -->
+<path d="M22 14 Q11 18 11 30 L11 59 Q11 71 25 73 L41 70 L41 35 Z" fill="#9c87da" stroke="#7762b9" stroke-width="2.2"/>
+<path d="M19 22 Q17 26 17 34 L17 60 Q18 66 26 68" fill="none" stroke="#f9fcff" stroke-width="2.3" opacity=".7"/>
+<path d="M36 33 L36 68" stroke="#7762b9" stroke-width="1.4" opacity=".75"/>
+<!-- title printed on the visible front cover, unobscured by other books -->
+<text x="174" y="25" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" text-anchor="middle" fill="#2d285e">Procedures</text>
+<path d="M59 31 L287 23" stroke="#fff" stroke-width="1.4" opacity=".38"/>
+</g><g transform="translate(91 50) rotate(-4 164 33)" filter="url(#book-shadow)">
+<!-- bottom hard cover -->
+<path d="M22 63 Q20 67 26 71 L310 71 Q321 71 324 65 L325 72 Q321 80 310 80 L27 80 Q16 79 16 69 Z" fill="#3977b4"/>
+<!-- paper block -->
+<path d="M40 20 L312 20 Q317 20 317 26 L317 66 Q317 70 311 70 L40 70 Z" fill="#fffefa" stroke="#c5cfde" stroke-width="1.6"/>
+<path d="M44 39 L313 39" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 41.65 L313 41.65" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 44.3 L313 44.3" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 46.95 L313 46.95" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 49.6 L313 49.6" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 52.25 L313 52.25" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 54.9 L313 54.9" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 57.55 L313 57.55" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 60.2 L313 60.2" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 62.849999999999994 L313 62.849999999999994" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/><path d="M44 65.5 L313 65.5" stroke="#c9d3e2" stroke-width=".85" opacity=".82"/>
+<!-- top cover is a broad angled book board -->
+<path d="M22 14 L303 5 Q314 4 319 13 L324 27 L41 35 Z" fill="#9acdf5" stroke="#3977b4" stroke-width="2.2" stroke-linejoin="round"/>
+<!-- cloth-covered curved book spine -->
+<path d="M22 14 Q11 18 11 30 L11 59 Q11 71 25 73 L41 70 L41 35 Z" fill="#6ba9df" stroke="#3977b4" stroke-width="2.2"/>
+<path d="M19 22 Q17 26 17 34 L17 60 Q18 66 26 68" fill="none" stroke="#f9fcff" stroke-width="2.3" opacity=".7"/>
+<path d="M36 33 L36 68" stroke="#3977b4" stroke-width="1.4" opacity=".75"/>
+<!-- title printed on the visible front cover, unobscured by other books -->
+<text x="174" y="25" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" text-anchor="middle" fill="#20446b">Policies</text>
+<path d="M59 31 L287 23" stroke="#fff" stroke-width="1.4" opacity=".38"/>
+</g></svg>
