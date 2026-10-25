@@ -1,1 +1,34 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 310"><defs><linearGradient id="b" x2="1" y2="1"><stop stop-color="#b9ddff"/><stop offset="1" stop-color="#69a7e3"/></linearGradient><linearGradient id="p" x2="1" y2="1"><stop stop-color="#d9ceff"/><stop offset="1" stop-color="#9986dc"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#536080" flood-opacity=".22"/></filter></defs><ellipse cx="260" cy="158" rx="230" ry="135" fill="#eeebff"/><g filter="url(#s)"><g transform="translate(80 194) rotate(-3 180 35)"><rect x="8" y="5" width="362" height="72" rx="12" fill="#c5cadc"/><rect x="26" y="17" width="336" height="46" rx="5" fill="#fff"/><path d="M20 5H351Q365 5 365 21V34H29Q18 34 18 47V65Q5 62 5 48V20Q5 5 20 5" fill="#f1f3fa" stroke="#c5cadc" stroke-width="2"/><path d="M30 9V62" stroke="#bdc5d7" stroke-width="3"/><text x="135" y="29" font-family="Arial" font-size="19" font-weight="bold" fill="#30446b">Best practices</text></g><g transform="translate(91 122) rotate(3 180 35)"><rect x="8" y="5" width="362" height="72" rx="12" fill="#8170bb"/><rect x="26" y="17" width="336" height="46" rx="5" fill="#fff"/><path d="M20 5H351Q365 5 365 21V34H29Q18 34 18 47V65Q5 62 5 48V20Q5 5 20 5" fill="url(#p)" stroke="#9585d2" stroke-width="2"/><path d="M30 9V62" stroke="#8b7ac6" stroke-width="3"/><text x="150" y="29" font-family="Arial" font-size="19" font-weight="bold" fill="#342b71">Procedures</text></g><g transform="translate(86 47) rotate(-5 180 35)"><rect x="8" y="5" width="362" height="72" rx="12" fill="#4b85bd"/><rect x="26" y="17" width="336" height="46" rx="5" fill="#fff"/><path d="M20 5H351Q365 5 365 21V34H29Q18 34 18 47V65Q5 62 5 48V20Q5 5 20 5" fill="url(#b)" stroke="#6d9fcd" stroke-width="2"/><path d="M30 9V62" stroke="#76a5d2" stroke-width="3"/><text x="171" y="29" font-family="Arial" font-size="19" font-weight="bold" fill="#234b78">Policies</text></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 310" role="img" aria-labelledby="title desc"><title id="title">Three hardcover knowledge books</title><desc id="desc">Three substantial hardcover books stacked with visible spines, covers and paper pages, titled Policies, Procedures and Best practices.</desc><defs><filter id="shadow" x="-25%" y="-35%" width="150%" height="180%"><feDropShadow dx="1" dy="10" stdDeviation="7" flood-color="#415275" flood-opacity=".22"/></filter></defs><ellipse cx="260" cy="270" rx="182" ry="15" fill="#7184ad" opacity=".12"/><g transform="translate(93 188) rotate(-3 155 40)" filter="url(#shadow)">
+<path d="M22 10 L323 10 L350 28 L350 81 L41 81 L22 66 Z" fill="#7c89a6"/>
+<path d="M42 33 L343 33 L343 73 L42 73 Z" fill="#fffdfa" stroke="#d4dceb" stroke-width="1.5"/>
+<path d="M44 39 H340" stroke="#d5dbe5" stroke-width=".85"/><path d="M44 43.5 H340" stroke="#d5dbe5" stroke-width=".85"/><path d="M44 48 H340" stroke="#d5dbe5" stroke-width=".85"/><path d="M44 52.5 H340" stroke="#d5dbe5" stroke-width=".85"/><path d="M44 57 H340" stroke="#d5dbe5" stroke-width=".85"/><path d="M44 61.5 H340" stroke="#d5dbe5" stroke-width=".85"/><path d="M44 66 H340" stroke="#d5dbe5" stroke-width=".85"/>
+<path d="M21 8 Q17 8 17 15 L17 67 Q17 78 29 80 L44 80 L44 29 L330 29 L323 7 Z" fill="#a8b1c9"/>
+<path d="M45 5 L326 5 Q335 5 335 15 L335 36 L45 36 Z" fill="#e8ebf5" stroke="#a8b1c9" stroke-width="2"/>
+<path d="M17 14 Q18 7 26 7 L45 5 L45 36 L36 37 Q27 39 27 49 L27 72 L17 67 Z" fill="#7c89a6"/>
+<path d="M35 14 L35 72" stroke="#dbe9ff" stroke-width="2" opacity=".8"/>
+<path d="M49 10 L318 10" stroke="#fff" stroke-opacity=".5" stroke-width="2"/>
+<text x="185" y="26" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#233d67" text-anchor="middle">Best practices</text>
+<path d="M45 78 L348 78" stroke="#7c89a6" stroke-width="5" stroke-linecap="round"/>
+</g><g transform="translate(105 113) rotate(2 155 40)" filter="url(#shadow)">
+<path d="M22 10 L323 10 L350 28 L350 81 L41 81 L22 66 Z" fill="#6550a7"/>
+<path d="M42 33 L343 33 L343 73 L42 73 Z" fill="#fffdfa" stroke="#d4dceb" stroke-width="1.5"/>
+<path d="M44 39 H340" stroke="#d5dbe5" stroke-width=".85"/><path d="M44 43.5 H340" stroke="#d5dbe5" stroke-width=".85"/><path d="M44 48 H340" stroke="#d5dbe5" stroke-width=".85"/><path d="M44 52.5 H340" stroke="#d5dbe5" stroke-width=".85"/><path d="M44 57 H340" stroke="#d5dbe5" stroke-width=".85"/><path d="M44 61.5 H340" stroke="#d5dbe5" stroke-width=".85"/><path d="M44 66 H340" stroke="#d5dbe5" stroke-width=".85"/>
+<path d="M21 8 Q17 8 17 15 L17 67 Q17 78 29 80 L44 80 L44 29 L330 29 L323 7 Z" fill="#7e68c4"/>
+<path d="M45 5 L326 5 Q335 5 335 15 L335 36 L45 36 Z" fill="#b7a7ef" stroke="#7e68c4" stroke-width="2"/>
+<path d="M17 14 Q18 7 26 7 L45 5 L45 36 L36 37 Q27 39 27 49 L27 72 L17 67 Z" fill="#6550a7"/>
+<path d="M35 14 L35 72" stroke="#dbe9ff" stroke-width="2" opacity=".8"/>
+<path d="M49 10 L318 10" stroke="#fff" stroke-opacity=".5" stroke-width="2"/>
+<text x="185" y="26" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#233d67" text-anchor="middle">Procedures</text>
+<path d="M45 78 L348 78" stroke="#6550a7" stroke-width="5" stroke-linecap="round"/>
+</g><g transform="translate(94 38) rotate(-5 155 40)" filter="url(#shadow)">
+<path d="M22 10 L323 10 L350 28 L350 81 L41 81 L22 66 Z" fill="#2d639e"/>
+<path d="M42 33 L343 33 L343 73 L42 73 Z" fill="#fffdfa" stroke="#d4dceb" stroke-width="1.5"/>
+<path d="M44 39 H340" stroke="#d5dbe5" stroke-width=".85"/><path d="M44 43.5 H340" stroke="#d5dbe5" stroke-width=".85"/><path d="M44 48 H340" stroke="#d5dbe5" stroke-width=".85"/><path d="M44 52.5 H340" stroke="#d5dbe5" stroke-width=".85"/><path d="M44 57 H340" stroke="#d5dbe5" stroke-width=".85"/><path d="M44 61.5 H340" stroke="#d5dbe5" stroke-width=".85"/><path d="M44 66 H340" stroke="#d5dbe5" stroke-width=".85"/>
+<path d="M21 8 Q17 8 17 15 L17 67 Q17 78 29 80 L44 80 L44 29 L330 29 L323 7 Z" fill="#4a89c4"/>
+<path d="M45 5 L326 5 Q335 5 335 15 L335 36 L45 36 Z" fill="#8fc6f2" stroke="#4a89c4" stroke-width="2"/>
+<path d="M17 14 Q18 7 26 7 L45 5 L45 36 L36 37 Q27 39 27 49 L27 72 L17 67 Z" fill="#2d639e"/>
+<path d="M35 14 L35 72" stroke="#dbe9ff" stroke-width="2" opacity=".8"/>
+<path d="M49 10 L318 10" stroke="#fff" stroke-opacity=".5" stroke-width="2"/>
+<text x="185" y="26" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#233d67" text-anchor="middle">Policies</text>
+<path d="M45 78 L348 78" stroke="#2d639e" stroke-width="5" stroke-linecap="round"/>
+</g></svg>
