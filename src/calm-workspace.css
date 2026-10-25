@@ -273,3 +273,9 @@
 .cx-kb-hero-art .cx-kb-book-three{background:linear-gradient(110deg,#e1e5f1,#fafbff)!important;color:#3b4d72!important;transform:rotate(-3deg) translate(-3px,-9px)!important;z-index:1!important}
 .cx-kb-hero-art .cx-kb-art-note{display:none!important}
 @media(max-width:650px){.cx-kb-hero-art{min-height:225px!important}.cx-kb-hero-art .cx-kb-book{width:78%!important;height:52px!important;font-size:13px!important}}
+
+/* Render the actual book illustration instead of the old CSS rectangles */
+.cx-kb-hero-art.cx-kb-hero-image{display:flex!important;align-items:center!important;justify-content:center!important;min-height:260px!important;padding:0!important;transform:none!important}
+.cx-kb-hero-art.cx-kb-hero-image::after{content:none!important}
+.cx-kb-hero-image img{position:relative;z-index:1;display:block;width:100%;max-width:490px;height:auto;object-fit:contain;filter:none}
+@media(max-width:650px){.cx-kb-hero-art.cx-kb-hero-image{min-height:0!important}.cx-kb-hero-image img{max-width:380px}}
