@@ -8,7 +8,8 @@ const globalCss = readFileSync(new URL('../src/index.css', import.meta.url), 'ut
 
 test('product name and demo disclosure are present', () => {
   assert.match(app, /CX Agent Assist/);
-  assert.match(app, /Rules-based assistance, not live AI/);
+  assert.match(app, /Fictional data · Rules-based Demo and optional live AI/);
+  assert.match(app, /AI · Live model \(server configured\)/);
   assert.match(app, /Editable draft · Not sent/);
 });
 test('ticket workflow controls are present', () => {
