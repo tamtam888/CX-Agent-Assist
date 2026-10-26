@@ -108,3 +108,8 @@ test('restrained product brand and filter layout are retained', () => {
   assert.match(polish, /\.cx-filters\{display:flex!important;gap:4px!important/);
   assert.match(polish, /\.cx-brand-icon\{background:#182c52!important/);
 });
+
+test('clear input preserves generated AI draft and saved conversation', () => {
+  assert.match(app, /setCaseMessage\(''\);setDictationResetKey\(key=>key\+1\)\}\}>Clear<\/button>/);
+  assert.match(app, /caseConversation\.map\(/);
+});
