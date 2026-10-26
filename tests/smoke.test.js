@@ -121,3 +121,11 @@ test('live AI replies are appended directly without an editable draft', () => {
   assert.match(app, /New conversation/);
   assert.match(app, /AI response/);
 });
+
+test('workspace view and fictional AI chat survive page refresh', () => {
+  assert.match(app, /new URLSearchParams\(window\.location\.search\)\.get\('view'\)/);
+  assert.match(app, /window\.history\.replaceState/);
+  assert.match(app, /sessionStorage\.setItem\('cx-agent-case-conversation'/);
+  assert.match(app, /sessionStorage\.getItem\('cx-agent-case-conversation'/);
+  assert.match(app, /sessionStorage\.setItem\('cx-agent-case-mode'/);
+});
