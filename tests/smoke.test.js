@@ -113,3 +113,11 @@ test('clear input preserves generated AI draft and saved conversation', () => {
   assert.match(app, /setCaseMessage\(''\);setDictationResetKey\(key=>key\+1\)\}\}>Clear<\/button>/);
   assert.match(app, /caseConversation\.map\(/);
 });
+
+test('live AI replies are appended directly without an editable draft', () => {
+  assert.match(app, /mode:'ai'/);
+  assert.match(app, /setCaseConversation\(turns=>\[\.\.\.turns,/);
+  assert.match(app, /caseMode!=='ai'&&caseResult&&<section/);
+  assert.match(app, /New conversation/);
+  assert.match(app, /AI response/);
+});
