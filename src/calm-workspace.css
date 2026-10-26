@@ -310,3 +310,12 @@
 
 /* Keep the approved transparent book illustration contained within the hero. */
 .cx-kb-hero-art .cx-kb-books-sticker{display:block;width:100%;height:100%;max-width:480px;max-height:350px;object-fit:contain;object-position:center;filter:none}
+
+/* Compact secondary action in the conversation header. */
+.cx-chat-head-actions{margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:7px;flex-shrink:0}
+.cx-chat-head-actions .cx-chat-personas{margin-left:0}
+.cx-chat-head-actions .cx-new-conversation{width:auto;min-width:0;padding:5px 11px;border:1px solid #dce5ee;border-radius:999px;background:#fff;color:#48617c;font:inherit;font-size:11px;font-weight:600;line-height:1.35;white-space:nowrap;cursor:pointer;box-shadow:none;transition:background .15s,border-color .15s}
+.cx-chat-head-actions .cx-new-conversation:hover:not(:disabled){background:#f0f7f8;border-color:#b8d5d8}
+.cx-chat-head-actions .cx-new-conversation:focus-visible{outline:2px solid #0b918c;outline-offset:2px}
+.cx-chat-head-actions .cx-new-conversation:disabled{opacity:.5;cursor:not-allowed}
+@media(max-width:520px){.cx-chat-head-actions{gap:5px}.cx-chat-head-actions .cx-new-conversation{font-size:10px;padding:4px 8px}}
