@@ -1,4 +1,6 @@
-# CX Agent Assist
+# CX Agent Assist — AI-Powered Customer Support Demo
+
+**Customer support workspace · Ticket triage · Knowledge base · Optional OpenAI integration**
 
 **AI-powered customer support copilot · Interactive portfolio project**
 
